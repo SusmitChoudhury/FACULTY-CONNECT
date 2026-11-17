@@ -1,0 +1,19 @@
+{
+  "name": "Faculty Connect – Academic Communication System",
+  "short_name": "Faculty Connect",
+  "description": "Making Academic Communication Smarter, Faster and More Organised. INT335 Project P09.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#FCF9EA",
+  "theme_color": "#15370D",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "productivity"]
+}

@@ -8,7 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
+# dist is tracked so backend can serve compiled SPA on cloud hosts
 dist-ssr
 *.local
 
