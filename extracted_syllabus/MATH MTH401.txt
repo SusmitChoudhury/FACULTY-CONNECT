@@ -1,0 +1,102 @@
+MTH401
+:
+DISCRETE MATHEMATICS
+Course Outcomes:
+CO1 :: 
+understand methods for constructing and validating logical proofs.
+CO2 :: 
+explain recursive techniques for solving problems in combinatorics.
+CO3 :: 
+apply the equivalence and partial order relation properties on graph.
+Unit I
+Logic and Proofs
+ : 
+Propositional logic, propositional equivalences, quantifiers, Introduction to proof, 
+direct proof,proof by contraposition, vacuous and trivial proof, proof strategy, proof by contradiction, 
+proof of equivalence and counterexamples, mistakes in proof
+Unit II
+Recurrence relations
+ : 
+recurrence relation, modelling with recurrence relations, homogeneous linear 
+recurrence relations with constant coefficients, Method of inverse operator to solve the non-
+homogeneous recurrence relation with constant coefficient, generating functions, solution of 
+recurrence relation using generating functions
+Unit III
+Counting principles and relations
+ : 
+principle of Inclusion-Exclusion, Pigeonhole, generalized 
+pigeonhole principle, relations and their properties, combining relation, composition, representing 
+relation using matrices and graph, equivalence relations, partial and total ordering relations, lattice, 
+sub lattice, Hasse diagram and its components
+Unit IV
+Graphs theory I
+ : 
+graph terminologies, special types of graphs(complete, cycle, regular, wheel, 
+cube, bipartite and complete bipartite), representing graphs, adjacency and incidence matrix, graph-
+isomorphism, path and connectivity for undirected and digraphs, Dijkstra
+s algorithm for shortest path 
+problem
+Unit V
+Graphs theory II
+ : 
+planner graphs, Euler formula, colouring of a graph and chromatic number, tree 
+graph and its properties, rooted tree, spanning and minimum spanning tree, decision tree, infix, 
+prefix, and postfix notation
+Unit VI
+Number theory and its application in cryptography
+ : 
+divisibility and modular arithmetic, primes, 
+greatest common divisors and least common multiples, Euclidean algorithm, Bezout's lemma, linear 
+congruence, inverse of (a modulo m), Chinese remainder theorem, encryption and decryption by 
+Ceasar cipher and affine transformation, Fermat
+s little theorem
+Text
+ Books
+:
+1
+. 
+DISCRETE MATHEMATICS AND ITS APPLICATIONS by KENNETH H ROSEN, MCGRAW HILL 
+EDUCATION 
+Reference
+s
+:
+1
+. 
+HIGHER ENGINEERING MATHEMATICS by B. V. RAMANA, MC GRAW HILL 
+CO4 :: 
+understand various graph-theoretic concepts and explore their applications.
+CO5 :: 
+apply concepts of planar graphs, Euler's formula, graph coloring, and tree properties in 
+problem-solving.
+CO6 :: 
+compute the solution of linear congruences using the Euclidean algorithm.
+Through this course students should be able to
+L:
+3
+   
+T:
+1
+   
+P:
+0
+    
+Credits
+:
+4
+  
+Session  20
+26
+-
+27
+                  Page:
+1
+/
+2
+Session  20
+26
+-
+27
+                  Page:
+2
+/
+2

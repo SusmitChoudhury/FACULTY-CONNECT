@@ -1,0 +1,112 @@
+INT335
+:
+DESIGN THINKING
+Course Outcomes:
+CO1 :: 
+explain  the core principles of human-centered design frameworks and differentiate 
+iterative workflows from traditional linear engineering pipelines.
+CO2 :: 
+apply  primary qualitative research and field observation methods to identify user 
+requirements and customer environmental needs. 
+CO3 :: 
+analyze  unstructured user data and qualitative insights to formulate clear, actionable 
+design challenge frameworks.
+Unit I
+Foundations of Learning, Creativity and Design Thinking
+ : 
+Learning and Creative Thinking: 
+Brain Processing Dynamics: Focused and Diffuse Modes, Learning Frameworks and VARK Model, 
+Functional Fixedness and Cognitive Blocks, Creativity, Invention and Innovation, Foundations of 
+Design Thinking: History and Evolution of Design Thinking, Stanford d.school Design Thinking 
+Framework, IDEO Human-Centred Design Framework, Global Case Studies of Successful and Failed 
+Designs
+Unit II
+Empathy, Observation and Problem Identification
+ : 
+User Empathy and Research Methods: 
+Computational Empathy in Software Engineering, Qualitative and Quantitative User Research, Field 
+Observation and AEIOU Framework, User Interviews and Inquiry Techniques, User Needs and Problem 
+Identification: Explicit and Implicit User Needs, User Pain Points and Problem Identification, User 
+Personas and Target Archetypes, Empathy Mapping and User Insights
+Unit III
+Ideation and Creative Problem Solving
+ : 
+Divergent Thinking and Idea Generation: Convergent 
+and Divergent Thinking, Brainstorming and Idea Generation, SCAMPER Technique, Mind Mapping and 
+Reverse Thinking, Idea Evaluation and Selection: Idea Organisation and Clustering, Feasibility and 
+Relevance Analysis, Idea Screening Matrices, Idea Selection and Prioritisation
+Unit IV
+Product Design and Prototyping
+ : 
+Prototyping and Rapid Learning: Prototyping Philosophy and 
+Rapid Learning, Low-Fidelity and High-Fidelity Prototypes, Paper Prototyping for Digital Products, 
+Storyboarding User Interactions, Wireframing and Minimum Viable Product: Fundamentals of Digital 
+Wireframing, Wireframing Rules and Conventions, User Flows and Core Product Features, Minimum 
+Viable Product (MVP)
+Unit V
+Testing, Validation and Customer Experience
+ : 
+User Testing and Design Validation: Principles of 
+Neutral User Testing, Task Scenarios and User Testing, Show, Don
+t Tell Testing Approach, Feedback 
+Capture Matrix, Customer Experience and Usability: Customer Experience and Journey Mapping, User 
+Touchpoints and Pain Points, Software Usability and Navigation, Accessibility in Digital Products
+Unit VI
+Innovation Project, Re-Design and Product Presentation
+ : 
+Design Iteration and Product Re-
+Design: Principles of Design Iteration, User Feedback Analysis, Design Refactoring and Re-Design, 
+Strategic Pivoting and Continuous Improvement, Product Presentation and Design Communication: 
+High-Impact Product Presentation, NABC Model, Elevator Pitching and Product Communication, 
+Technical Design Case Study and Final Project Presentation
+Text
+ Books
+:
+1
+. 
+CHANGE BY DESIGN by TIM BROWN, HARPER 
+Reference
+s
+:
+1
+. 
+DESIGN THINKING FOR DUMMIES by CHRISTIAN MULLER-ROTERBERG, WILEY 
+CO4 :: 
+apply  divergent thinking tools, ideation strategies, and screening techniques to 
+systematically prioritize alternative design solutions.
+CO5 :: 
+demonstrate prototyping concepts by planning low-fidelity layouts and structural 
+interaction paths for applications.
+CO6 :: 
+analyze  user validation data, feedback matrices, and customer journey graphs to identify 
+operational design bottlenecks. 
+Through this course students should be able to
+L:
+2
+   
+T:
+0
+   
+P:
+0
+    
+Credits
+:
+2
+  
+Session  20
+26
+-
+27
+                  Page:
+1
+/
+2
+Session  20
+26
+-
+27
+                  Page:
+2
+/
+2

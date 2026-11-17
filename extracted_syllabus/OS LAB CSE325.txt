@@ -1,0 +1,97 @@
+CSE325
+:
+OPERATING SYSTEMS LABORATORY
+Course Outcomes:
+CO1 :: 
+Understand Linux command-line tools and system utilities to manage users, groups, 
+packages, and files in a Linux environment.
+CO2 :: 
+Apply automation scripts using Bash shell scripting using variables, conditionals, loops, 
+arrays, functions
+CO3 :: 
+Use low-level file and directory operations using OS system calls
+CO4 :: 
+Contrast process creation and management using fork and exec.
+CO5 :: 
+Demonstrate multithreading and synchronization mechanisms using POSIX threads, 
+mutexes, and semaphores to resolve race conditions.
+CO6 :: 
+Apply inter-process communication mechanisms using pipes, shared memory
+Through this course students should be able to
+Linux Ecosystem & Infrastructure
+Linux Distributions & Families
+Command Line Fundamentals
+User & Group Management
+Package Management
+Shell Scripting
+Script creation, execution, and permissions
+Environment and user-defined variables.
+Arithmetic operations using expr and bc
+Input/Output redirection and pipes.
+Conditional statements and menu-driven programs
+Looping constructs: for, while, until.
+Indexed and associative arrays
+User-defined functions and parameter passing
+File system management
+File system calls: open, read, write, close, lseek
+Process Management & Signals
+Process creation using fork()
+Program execution using exec()
+Orphan and Zombie processes
+Process synchronization using wait() and signals.
+Multithreading & Synchronization
+POSIX thread creation and termination
+Race conditions and critical sections
+Mutex locks and semaphores
+Inter-Process Communication (IPC)
+Pipes and Named FIFOs
+List of Practicals / Experiments:
+L:
+0
+   
+T:
+0
+   
+P:
+2
+    
+Credits
+:
+1
+  
+Session  20
+26
+-
+27
+                  Page:
+1
+/
+2
+Text
+ Books
+:
+1
+. 
+BEGINING LINUX PROGRAMMING by NEIL MATHEW & RICHARD STONES, WILEY 
+2
+. 
+OPERATING SYSTEMS: INTERNALS AND DESIGN PRINCIPLES by WILLIAM STALLINGS, 
+PEARSON 
+Reference
+s
+:
+1
+. 
+OPERATING SYSTEM CONCEPTS by ABRAHAM SILBERSCHATZ, GALVIN, WILEY 
+2
+. 
+UNIX CONCEPTS AND APPLICATIONS by SUMITABHA DAS, Tata McGraw Hill, India 
+Shared Memory
+Session  20
+26
+-
+27
+                  Page:
+2
+/
+2

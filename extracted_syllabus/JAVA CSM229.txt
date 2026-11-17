@@ -1,0 +1,151 @@
+CSM229
+:
+PROGRAMMING IN JAVA
+Course Outcomes:
+CO1 :: 
+use of basic constructs of Java programming to solve the real-world problems
+CO2 :: 
+apply the Object-oriented programming principles to write efficient and reusable codes
+CO3 :: 
+understand the application of abstract classes, interfaces and Lambda expressions
+Unit I
+Executing First Java Program
+ : 
+Installation of JDK, writing first Java program, Compiling, 
+Executing using Command Prompt and IDE, Writing Comments and Debugging Java Program, Data 
+Types, Variables and Operators, Primitive Data types, Array and String, Working with Arrays, 
+Characters and String
+Unit II
+Basic I/O
+ : 
+Describing the basics of input and output in Java, Read and write data from the console
+Control Statements
+ : 
+Using conditional statements, using for, while and do while loops, optimizing 
+the number of iterations
+Methods
+ : 
+Defining method, invoking the method, Method Overloading and using internal functions
+Lambda Expressions
+ : 
+Defining and using lambda expressions
+Unit III
+Object Oriented Programming
+ : 
+Object Oriented Programming principles, benefits of OOP
+Encapsulation
+ : 
+Introduction to Classes and Objects, modelling real-life problems using classes & 
+objects, defining and invoking constructors, using this, final and static keywords
+Abstraction
+ : 
+private access modifier, private methods and constructors, implementing getter & 
+setter methods
+Unit IV
+Inheritance
+ : 
+Overview of inheritance, working with subclasses and super-classes, Method 
+Overriding, Dynamic polymorphism, Inheritance vs Composition
+Abstract classes and Interfaces
+ : 
+Defining abstract Java classes and creating subclasses, using 
+interfaces and understanding the importance of default and static methods, implementing anonymous 
+classes
+Unit V
+Arrays and Linked List
+ : 
+Using Arrays, Structure and basic operations on ArrayList and LinkedList, 
+Using Iterators, Performance Measurement, Performance of different operations in ArrayList and 
+LinkedList
+Exception Handling
+ : 
+An overview, Propagation of exceptions, Catching and throwing exceptions, 
+handling multiple exceptions and errors, Defining the purpose of Java exceptions, Using the try and 
+throw statements, Using the catch, multi-catch, and finally clauses, Autoclose resources with a try- 
+with-resources statement, recognizing common exception classes and categories, creating custom 
+exceptions
+Unit VI
+Assertions
+ : 
+using assertions in Java to test the environment
+Stream API
+ : 
+Using Stream API, creating streams and implementing intermediate and terminal 
+operations on Streams
+Serialization
+ : 
+Using ObjectInputStream and ObjectOutputStream and Object serialization
+JDBC (Java Data Base Connectivity)
+ : 
+Introduction to JDBC, JDBC Architecture, Setting Up JDBC, 
+Executing SQL Statements.
+CO4 :: 
+develop the robust java applications to handle environment specific issues at run-time
+CO5 :: 
+use of predefined java libraries and in-built data structures to develop efficient java 
+applications
+CO6 :: 
+understand the establishment of database connections and manage transactions using 
+jdbc
+Through this course students should be able to
+L:
+3
+   
+T:
+0
+   
+P:
+2
+    
+Credits
+:
+4
+  
+Session  20
+26
+-
+27
+                  Page:
+1
+/
+2
+Text
+ Books
+:
+1
+. 
+JAVA THE COMPLETE REFERENCE by HERBERT SCHILDT, MC GRAW HILL 
+Reference
+s
+:
+1
+. 
+INTRODUCTION TO JAVA PROGRAMMING by Y. DANIEL LIANG,, PEARSON 
+List of Practical
+Last non-zero digit of the factorial
+Variance and Standard-Deviation
+Prime numbers less than or equal to n (Part I)
+Prime numbers less than or equal to n (Part II)
+Pascal Triangle
+Two people meet each other
+Container with more water
+Print the Sum Triangle of an Array
+Binary Number Without Consecutive 1's
+Minimize (MAX-MIN) of triplets
+Partition Negative and Positive
+Sum of the product of all possible subsets
+Sorting Array by Rotating Subarrays
+Division of the Chocolate Bar
+Minimum Value of 
+Max + Min
+in a Subarray
+Closest Product Pair in an Array
+List of Practicals / Experiments:
+Session  20
+26
+-
+27
+                  Page:
+2
+/
+2

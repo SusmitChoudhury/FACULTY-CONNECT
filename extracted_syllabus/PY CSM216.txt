@@ -1,0 +1,99 @@
+CSM216
+:
+PYTHON PROJECT
+Course Outcomes:
+CO1 :: 
+define  the Python language syntax, including control statements, loops, functions, 
+classes.
+CO2 :: 
+classify numpy, pandas and matplotlib module for data analysis
+CO3 :: 
+apply the tkinter module to build GUI applications.
+Text
+ Books
+:
+1
+. 
+PEARSON PYTHON PROGRAMMING by S.SRIDHAR, J. INDUMATHI, V.M. HARIHARAN, 
+PEARSON 
+2
+. 
+CORE PYTHON PROGRAMMING by DR. R. NAGESWARA RAO, DREAMTECH PRESS 
+Reference
+s
+:
+1
+. 
+MAKING GAMES WITH PYTHON & PYGAME by AL SWEIGART, CREATESPACE INDEPENDENT 
+PUBLISHING PLATFORM 
+CO4 :: 
+compare and contrast the performance of linear search and binary search.
+CO5 :: 
+design the pygame module for different computer graphics and sound.
+CO6 :: 
+construct different projects on real world problems using python.
+Through this course students should be able to
+Core Python & Algorithmic Thinking
+Basic Input/Output,  Control flow & Looping statements, Data Structures, random module, Time and 
+Space Complexity,
+Project1:- Number Guessing System
+GUI Development Foundations
+Tkinter Widgets, Geometry Managers, Event Binding & Command parameter, Event Loop
+Project1:- Child Nutrients Calculator
+Gaming Development & Event-Driven System
+Pygame module, Coordinate system Surface & Rect object, Event handling,States managment
+Project1:- Interactive tic-tac-toe
+Project2:- Quiz Application
+Data Science & Machine Learning Foundations
+Numpy Arrays, Pandas Dataframe, Matplotlib/Seaborn,ML introduction Supervised and Unsupervised 
+Learning
+Project1:- IMDB Movie Assignment
+Project2:- Credit Card Fraud Detection
+Algorithm Performance & Analytics
+Implementing core searching algorithms (Linear Search, Binary Search), time module , Performance 
+analysis
+Project1:- Searching Algorithm Performance Analyzer
+Advanced GUI & Desktop Application
+Tkinter grid layouts and widget styling, operator logic and dynamic, operator logic and dynamic
+Project1:- Simple & Scientific Desktop Calculator
+List of Practicals / Experiments:
+L:
+0
+   
+T:
+0
+   
+P:
+3
+    
+Credits
+:
+2
+  
+Session  20
+26
+-
+27
+                  Page:
+1
+/
+2
+Reference
+s
+:
+2
+. 
+PYTHON MACHINE LEARNING: MACHINE LEARNING AND DEEP LEARNING WITH PYTHON, 
+SCIKIT-LEARN, AND TENSORFLOW 2, THIRD EDITION by DR. SEBASTIAN RASCHKA, PACKT 
+PUBLISHING 
+3
+. 
+PYTHON PROGRAMMING by REEMA THAREJA, OXFORD UNIVERSITY PRESS 
+Session  20
+26
+-
+27
+                  Page:
+2
+/
+2

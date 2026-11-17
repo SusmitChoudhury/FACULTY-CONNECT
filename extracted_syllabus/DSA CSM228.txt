@@ -1,0 +1,133 @@
+CSM228
+:
+DATA STRUCTURES
+Course Outcomes:
+CO1 :: 
+describe the process to find efficiency of algorithms using asymptotic notations
+CO2 :: 
+illustrate the importance of Queue in context of problems solving
+CO3 :: 
+differentiate the HashTable and HashMap in context of writing efficient program
+Unit I
+Introduction
+ : 
+Basic Data Structures, Basic Concepts and Notations, Complexity analysis: time space 
+and trade of, Omega Notation, Theta Notation, Big O notation
+Stacks
+ : 
+Introduction to Stacks, Implementing a stack, Parenthesis matching problem using Stacks, 
+Industry demonstration: File versioning system
+Unit II
+Queues
+ : 
+Introduction to Queues, implement a stack using one queue, implement a stack using two 
+queues, Ticket booking system using Queues, Palindromic string problem, Duplicate parenthesis 
+problem, Reversing a stack problem, Kth largest element problem
+Unit III
+HashTables
+ : 
+Design and performance analysis of hash tables, Hash functions and hashing, Collision 
+in hash tables, how to check if a given hash function is good or bad, Implementation of a dictionary 
+(phone book) using a hash table
+HashMaps
+ : 
+Introduction to the HashMaps, Find Symmetric Pairs problem, Find Asymmetric Pairs 
+problem, First Unique Character problem
+Unit IV
+HashSets
+ : 
+Introduction to the HashSets, Array of Contiguous Integers problem, Pair with a Given 
+Sum problem, Itinerary From all Tickets problem, Match Locks and Keys problem
+Binary Trees
+ : 
+Linear vs non-Linear data structures, Types & Representation of binary trees, Trees & 
+Binary Trees, Properties, Tree Traversal: DFS & BFS, Title problem: Runway Reservation, Mirroring a 
+tree problem, Spiral order traversal of a tree
+Binary Search Trees
+ : 
+Introduction to the Binary Search Trees, Searching, Insertion & Deletion in a 
+BST, Lowest common ancestor problem, Balanced BSTs, Solution of the Title Problem
+Unit V
+Priority Queues
+ : 
+Introduction to the Priority queues with example, Priority queues ADT, 
+Implementation of priority queues using LinkedList and ArrayList
+Heaps
+ : 
+Introduction to the Heaps, Basic operations performed on heaps, Sorting, Merge k sorted 
+linked list problem, Median of stream of integers problem
+Unit VI
+Graphs and Graph Algorithms
+ : 
+Adjacency matrix, Application of graphs in real life, Depth-First 
+Search, Breadth-First Search, Adjacency list, Edge list, Dijkstra
+s algorithm
+CO4 :: 
+identify the appropriateness of HashSet and tree in problem solving
+CO5 :: 
+analyze the effectiveness of Priority queue and Heap Data Structures
+CO6 :: 
+use of Graph and various techniques in real world problem solving
+Through this course students should be able to
+L:
+3
+   
+T:
+0
+   
+P:
+2
+    
+Credits
+:
+4
+  
+Stacks and Queues
+Program to sort a stack using recursion.
+Program to delete middle element of a stack.
+Solving the parenthesis matching problem using stacks.
+Program to implement operations in Queue: a. Reversing a Queue using recursion b. Check if a 
+queue can be sorted into another queue using a stack
+List of Practicals / Experiments:
+Session  20
+26
+-
+27
+                  Page:
+1
+/
+2
+Text
+ Books
+:
+1
+. 
+DATA STRUCTURES THROUGH C IN DEPTH by S.K. SRIVASTAVA AND DEEPALI 
+SRIVASTAVA, BPB PUBLICATIONS  
+Reference
+s
+:
+1
+. 
+DATA STRUCTURES AND ALGORITHMS IN JAVA by Y MICHAEL T. GOODRICH AND 
+ROBERTO TAMASSIA, JOHN WILEY & SONS 
+HashMap
+Program to find the length of the longest subarray with sum equal to zero.
+Program to find First unique character
+Binary Trees and BSTs
+Program to check if a binary tree is BST or not.
+Program to Spiral level order traversal
+Priority Queues and Heaps
+Program to convert a min heap to max heap.
+Implementation of a complete binary tree.
+Graph and Graph Algorithm
+Program to check whether a directed graph contains a cycle or not.
+To Count the total number of ways or paths that exist between two vertices in a directed graph.
+Session  20
+26
+-
+27
+                  Page:
+2
+/
+2

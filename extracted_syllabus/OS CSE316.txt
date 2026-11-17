@@ -1,0 +1,128 @@
+CSE316
+:
+OPERATING SYSTEMS
+Course Outcomes:
+CO1 :: 
+Recall OS structure, functions, evolution, and process management.
+CO2 :: 
+Apply CPU scheduling algorithms to optimize process execution.
+CO3 :: 
+Analyze synchronization mechanisms and classical problems for efficient multi-threaded 
+execution.
+Unit I
+Introduction to Operating System
+ : 
+Operating System Meaning, Supervisor & User Mode, Types of 
+Operating System : Simple Batch Systems, Multiprogramming and Multiprocessing System, 
+Multitasking,Parallel ,Distributed and RTOS etc, OS structure, system calls, functions of OS, evolution 
+of OSs
+Process Management
+ : 
+PCB, Operations on Processes, Co-operating and Independent Processes, 
+Process states, Operations on processes, Process concept, Life cycle
+Unit II
+CPU Scheduling
+ : 
+Types of Scheduling, Scheduling Algorithms, Scheduling criteria, CPU scheduler - 
+preemptive and non preemptive, Dispatcher, First come first serve, Shortest job first, Round robin, 
+Priority, Multi level feedback queue, multiprocessor scheduling, real time scheduling, thread 
+scheduling
+Unit III
+Process Synchronization
+ : 
+Critical Section Problem, Semaphores, Concurrent processes, Co-
+operating processes, Precedence graph, Hierarchy of processes, Monitors, Dining Philosopher Problem, 
+Reader-writer Problem, Producer consumer problem, classical two process and n-process solutions, 
+hardware primitives for synchronization
+Threads
+ : 
+Overview, Multithreading Models, scheduler activations, examples of threaded programs
+Unit IV
+Deadlock
+ : 
+Deadlock Characterization, Handling of deadlocks- Deadlock Prevention, Deadlock 
+Avoidance & Detection, Deadlock Recovery, Starvation
+Protection and Security
+ : 
+Need for Security, Security Vulnerability like Buffer overflow, Trapdoors, 
+Backdoors, cache poisoning etc, Authentication-Password based Authentication, Password 
+Maintenance & Secure Communication, Application Security - Virus, Program Threats, Goals of 
+protection, Principles of protection, Domain of protection, Access matrix, Implementation of access 
+matrix, System and network threats, Examples of attacks
+Unit V
+Memory Management
+ : 
+Logical & Physical Address Space, Swapping, Contiguous Memory allocation, 
+Paging, Segmentation, Page replacement algorithms, Segmentation - simple, multi-level and with 
+paging, Page interrupt fault, Fragmentation - internal and external, Schemes - Paging - simple and 
+multi level, Overlays - swapping, Virtual memory concept, Demand paging
+Unit VI
+File Management
+ : 
+File Concepts, Access methods, Directory Structure, File System Mounting and 
+Sharing, Protection, Allocation methods, Free-Space Management, Directory Implementation
+Device management
+ : 
+Dedicated, shared and virtual devices, Serial access and direct access 
+devices, Disk scheduling methods, Direct Access Storage Devices 
+Channels and Control Units
+Inter process communication
+ : 
+Introduction to IPC (Inter process communication) Methods, Pipes 
+- popen and pclose functions, Shared memory, FIFOs, Message queues
+Text
+ Books
+:
+1
+. 
+OPERATING SYSTEM CONCEPTS by ABRAHAM SILBERSCHATZ, PETER B. GALVIN, GERG 
+GAGNE, WILEY 
+Reference
+s
+:
+1
+. 
+DESIGN OF THE UNIX OPERATING SYSTEM by MAURICE J. BACH, Pearson Education India 
+CO4 :: 
+Analyze deadlock conditions and handling techniques
+CO5 :: 
+Apply memory management techniques such as paging, segmentation, and virtual 
+memory
+CO6 :: 
+Apply disk scheduling, inter-process communication methods
+Through this course students should be able to
+L:
+3
+   
+T:
+0
+   
+P:
+0
+    
+Credits
+:
+3
+  
+Session  20
+26
+-
+27
+                  Page:
+1
+/
+2
+Reference
+s
+:
+2
+. 
+REAL-TIME SYSTEMS by JANE W. S. LIU, Pearson Education India 
+Session  20
+26
+-
+27
+                  Page:
+2
+/
+2
