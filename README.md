@@ -99,7 +99,66 @@ The academic syllabus was extracted directly from the official PDF documents loc
 
 ---
 
-## 5. Step-by-Step Installation & Setup
+## 5. System User Flow & Interaction Journey
+
+GitHub renders the interactive flowchart below natively:
+
+```mermaid
+flowchart TD
+    %% Node Stylings
+    classDef student fill:#FCF9EA,stroke:#15370D,stroke-width:2px,color:#000000;
+    classDef faculty fill:#FCF9EA,stroke:#F2842F,stroke-width:2px,color:#000000;
+    classDef decision fill:#FFF2CC,stroke:#D6B656,stroke-width:2px,color:#000000;
+    classDef ai fill:#E1D5E7,stroke:#9673A6,stroke-width:2px,color:#000000;
+    classDef success fill:#D5E8D4,stroke:#82B366,stroke-width:2px,color:#000000;
+
+    subgraph Student_Workflow ["🎓 1. STUDENT ACADEMIC JOURNEY"]
+        S1["Student Logs In via LPU Registration ID"]:::student --> S2["Select Course, Unit, Topic & Lecture Date"]:::student
+        S2 --> S3["Enter Academic Question"]:::student
+        S3 --> S4{"Smart Semantic Similarity Check"}:::decision
+
+        S4 -- "Similarity >= 60%" --> S5["Duplicate Question Detected!"]:::decision
+        S5 --> S6["Option A: Click '+1 - I Have the Same Doubt'"]:::student
+        S5 --> S7["Option B: Submit as Distinct Question"]:::student
+
+        S6 --> S8["Classmate Linked to Question (Zero Faculty Clutter)"]:::success
+        S4 -- "Unique Query" --> S9["Doubt Published to Faculty Section Queue"]:::student
+        S7 --> S9
+    end
+
+    subgraph Background_AI ["⏱️ 2. 3-HOUR AUTOMATIC AI SAFETY NET"]
+        S9 --> A1{"Faculty Responds Within 3 Hours?"}:::decision
+        A1 -- "No (3-Hour SLA Exceeded)" --> A2["Server Daemon Timer Service Triggers"]:::ai
+        A2 --> A3["Generate Syllabus-Grounded Preliminary Answer"]:::ai
+        A3 --> A4["Status Marked: 'AI Answered' (Student Unblocked)"]:::ai
+        A4 --> A5["Queued for Faculty Quality Review"]:::faculty
+    end
+
+    subgraph Faculty_Workflow ["👨‍🏫 3. FACULTY EVALUATION & RESOLUTION"]
+        A1 -- "Yes (Within 3 Hours)" --> F1["Teacher Opens Faculty Console"]:::faculty
+        A5 --> F1
+        F1 --> F2{"Choose Resolution Method"}:::decision
+
+        F2 -- "Method 1: Instant AI Synthesizer" --> F3["Teacher Clicks 'Give Ans by AI'"]:::faculty
+        F2 -- "Method 2: Authoritative Manual Answer" --> F4["Teacher Types Official Solution & Text Citations"]:::faculty
+
+        F3 --> F5["Status Instantly Set to 'Resolved'"]:::success
+        F4 --> F5
+        F5 --> F6["Answer Drawer Automatically Closes"]:::success
+        F6 --> F7["Real-Time Notifications Pushed to Student & All '+1' Supporters"]:::success
+    end
+
+    subgraph Office_Hours ["📅 4. CABIN CONSULTATION BOOKING"]
+        C1["Student Views Live Faculty Cabin Consultation Hours"]:::student --> C2["Select Date, Time Slot & State Academic Reason"]:::student
+        C2 --> C3["Faculty Reviews Request in Appointments Tab"]:::faculty
+        C3 --> C4["Accept Slot + Attach Preparation Guidance"]:::faculty
+        C4 --> C5["In-Person Cabin Session Confirmed with Calendar Entry"]:::success
+    end
+```
+
+---
+
+## 6. Step-by-Step Installation & Setup
 
 ### Prerequisites
 - **Python 3.10+** (Python 3.11 recommended)
@@ -162,7 +221,7 @@ Open **`http://localhost:3000`** in your browser.
 
 ---
 
-## 6. Accessing Student & Faculty Portals
+## 7. Accessing Student & Faculty Portals
 
 ### Student Portal Access
 1. Open the landing screen.
@@ -192,17 +251,17 @@ Open **`http://localhost:3000`** in your browser.
 
 ---
 
-## 7. Installing Faculty Connect as a Chrome PWA
+## 8. Installing Faculty Connect as a Chrome PWA
 
 Faculty Connect includes a Web App Manifest (`manifest.json`), service worker (`sw.js`), and SVG application icons:
-1. Open `http://localhost:5000` (or `http://localhost:3000`) in **Google Chrome**.
+1. Open `http://localhost:5000` (or your live deployed HTTPS URL) in **Google Chrome**.
 2. Click the **"Install App"** button in the top navigation bar, or click the **Install icon (⊕)** on the right side of the Chrome address bar.
 3. Click **Install**.
 4. Faculty Connect will launch as a standalone desktop/mobile app window without browser URL bars, complete with offline shell caching.
 
 ---
 
-## 8. Verifying Core Evaluator Workflows
+## 9. Verifying Core Evaluator Workflows
 
 ### Workflow 1: Smart Duplicate Question Detection & "+1"
 1. Log in as student **Priya Sharma** (Section `K22DF`).
@@ -243,7 +302,7 @@ Faculty Connect includes a Web App Manifest (`manifest.json`), service worker (`
 
 ---
 
-## 9. Resetting Demonstration Data
+## 10. Resetting Demonstration Data
 To restore the platform to its pristine demonstration state at any time:
 - In the UI: Click **Reset Demonstration Data** in the floating INT335 Demo Bar.
 - Via CLI: Run `python backend/seed_data.py`.
@@ -251,7 +310,7 @@ To restore the platform to its pristine demonstration state at any time:
 
 ---
 
-## 10. Group Innovation Credentials & Team Members
+## 11. Group Innovation Credentials & Team Members
 - **Course & Project:** INT335 Design Thinking Group Innovation Project (ID: P09)
 - **Official Domain:** Faculty–Student Academic Communication Outside Lectures
 - **Institution:** Lovely Professional University (LPU), Punjab
@@ -265,10 +324,18 @@ To restore the platform to its pristine demonstration state at any time:
 
 ---
 
-## 11. Cloud Deployment Guide (Free & Instant)
-This application is fully production-ready with zero hardcoded URLs. It can be deployed in under 2 minutes on **Render**, **Railway**, or **Fly.io** with free automatic HTTPS (enabling the Chrome PWA "Install App" button):
+## 12. Cloud Deployment Guide (Railway & Render)
+This application is fully production-ready with zero hardcoded URLs. It can be deployed in under 2 minutes with free automatic HTTPS (enabling the Chrome PWA "Install App" button):
 
-### Deploying to Render.com (Recommended Free Hosting):
+### Option A: Railway (Fastest with 2 vCPU + 1 GB RAM):
+1. Sign in to [Railway.com](https://railway.com) using your GitHub account.
+2. Click **New Project** -> **Deploy from GitHub repo**.
+3. Select your repository: `susmitchoudhury063-sudo/FACULTY-CONNECT` (or `SusmitChoudhury/FACULTY-CONNECT`).
+4. Railway automatically detects the production `Dockerfile`.
+5. Under **Settings** -> **Networking**, click **Generate Domain** to get your public HTTPS URL!
+6. In **Variables**, add `GEMINI_API_KEY` (optional) to enable real-time Google Generative AI responses.
+
+### Option B: Render.com (100% Free Lifetime Hosting):
 1. Sign in to [Render.com](https://render.com) using your GitHub account.
 2. Click **New +** -> **Web Service**.
 3. Select this repository: `SusmitChoudhury/FACULTY-CONNECT`.
@@ -276,7 +343,6 @@ This application is fully production-ready with zero hardcoded URLs. It can be d
    - **Name:** `faculty-connect`
    - **Environment:** `Python 3`
    - **Build Command:** `pip install -r requirements.txt`
-   - **Start Command:** `gunicorn --chdir backend app:app --bind 0.0.0.0:$PORT`
+   - **Start Command:** `gunicorn --chdir backend app:app --bind 0.0.0.0:$PORT --workers 2 --threads 4`
 5. Click **Create Web Service**.
-6. Render builds and deploys your application on a free HTTPS URL (e.g. `https://faculty-connect.onrender.com`).
-7. Open the URL in Google Chrome -> Click the **Install** button in the address bar to install the Progressive Web Application (PWA)!
+6. Set up a free 10-minute monitor on [cron-job.org](https://cron-job.org) targeting `https://<your-service>.onrender.com/api/health` to keep Render awake 24/7 with zero cold-start lag!
