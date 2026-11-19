@@ -60,27 +60,27 @@ def build_cp3_pdf(output_path):
         [
             Paragraph("<b>2. Excessive Waiting & Transit Friction</b>", styles['td_bold']),
             Paragraph("Students expend 30-45 minutes trekking across campus and waiting on corridor stairs during short breaks between lectures.", styles['td']),
-            Paragraph("Interviewee Aman C. reported wasting 40 minutes sitting outside Cabin 402 only to miss preparation for his next class.", styles['td'])
+            Paragraph("Interviewee S01 reported wasting 40 minutes sitting outside a locked cabin only to miss preparation for the next class.", styles['td'])
         ],
         [
             Paragraph("<b>3. Repetitive Academic Inquiries</b>", styles['td_bold']),
             Paragraph("Faculty members spend hours answering the exact same conceptual question asked separately by individual students across sections.", styles['td']),
-            Paragraph("Dr. Rajesh Sharma recorded 28 nearly identical WhatsApp messages regarding SCAMPER steps within a 48-hour deadline.", styles['td'])
+            Paragraph("Faculty F02 recorded 28 nearly identical messages regarding project milestone steps within a 48-hour deadline.", styles['td'])
         ],
         [
             Paragraph("<b>4. Chaotic, Unstructured Channels</b>", styles['td_bold']),
-            Paragraph("Academic questions compete with informal chatter, memes, and club announcements on WhatsApp class groups.", styles['td']),
-            Paragraph("Student Rohan P. highlighted that legitimate doubts get buried beneath 150+ messages in less than 30 minutes.", styles['td'])
+            Paragraph("Academic questions compete with informal chatter, memes, and club announcements on class messaging groups.", styles['td']),
+            Paragraph("Student S03 highlighted that legitimate doubts get buried beneath 150+ messages in less than 30 minutes.", styles['td'])
         ],
         [
             Paragraph("<b>5. Absence of Bookable Office Hours</b>", styles['td_bold']),
             Paragraph("No structured mechanism exists to request or confirm a 10-minute 1-on-1 cabin consultation in advance.", styles['td']),
-            Paragraph("Dr. Harpreet Kaur reported her research afternoons are constantly disrupted by unscheduled student knocks.", styles['td'])
+            Paragraph("Faculty F01 reported research afternoons are constantly disrupted by unscheduled student knocks.", styles['td'])
         ],
         [
             Paragraph("<b>6. Social Anxiety in Inquiry</b>", styles['td_bold']),
             Paragraph("Students experience cognitive intimidation when knocking on closed doors or asking questions publicly in class.", styles['td']),
-            Paragraph("Student Priya S. abandoned an important OOP question after a professor noted another classmate had just asked it.", styles['td'])
+            Paragraph("Student S02 abandoned an important question after a professor noted another classmate had just asked it.", styles['td'])
         ],
         [
             Paragraph("<b>7. Faculty Cognitive Burnout</b>", styles['td_bold']),
@@ -114,7 +114,7 @@ def build_cp3_pdf(output_path):
     if os.path.exists(p_student_img):
         story.append(Image(p_student_img, width=540, height=300))
         story.append(Spacer(1, 6))
-        story.append(Paragraph("<b>Figure 3.1:</b> Student Archetype Persona — Rohan Patel (B.Tech CSE 2nd Year, Section K22GF).", styles['callout']))
+        story.append(Paragraph("<b>Figure 3.1:</b> Student Archetype Persona — Role: Student.", styles['callout']))
 
     story.append(Spacer(1, 14))
 
@@ -123,7 +123,7 @@ def build_cp3_pdf(output_path):
     if os.path.exists(p_faculty_img):
         story.append(Image(p_faculty_img, width=540, height=300))
         story.append(Spacer(1, 6))
-        story.append(Paragraph("<b>Figure 3.2:</b> Faculty Archetype Persona — Dr. Rajesh Sharma (Associate Professor & INT335 Lead, Cabin 34-601).", styles['callout']))
+        story.append(Paragraph("<b>Figure 3.2:</b> Faculty Archetype Persona — Role: Faculty.", styles['callout']))
 
     story.append(Spacer(1, 14))
 

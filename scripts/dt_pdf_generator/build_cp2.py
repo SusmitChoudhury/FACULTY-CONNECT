@@ -55,14 +55,14 @@ def build_cp2_pdf(output_path):
         ],
         [
             Paragraph("<b>Student In-Depth Interviews</b>", styles['td_bold']),
-            Paragraph("8 Undergraduate B.Tech CSE Students (S01–S08 across K22DF, K22GF, K22SE)", styles['td']),
-            Paragraph("Semi-Structured Interview Protocol (Central Library, Hostels, Hallways)", styles['td']),
+            Paragraph("8 Students (S01–S08)", styles['td']),
+            Paragraph("Semi-Structured Interview Protocol (Campus Library, Student Centers)", styles['td']),
             Paragraph("8 Individual Interview Dossiers with Evidence Placeholders", styles['td'])
         ],
         [
             Paragraph("<b>Faculty In-Depth Interviews</b>", styles['td_bold']),
-            Paragraph("3 Faculty Members across Seniority (F01: Asst Prof, F02: Assoc Prof, F03: Prof/HOD)", styles['td']),
-            Paragraph("Departmental Cabins (Blocks 34 & 38); Workload & Channel Flow Analysis", styles['td']),
+            Paragraph("3 Faculty Members (F01–F03)", styles['td']),
+            Paragraph("Departmental Cabins; Workload & Channel Flow Analysis", styles['td']),
             Paragraph("3 Detailed Faculty Transcripts with Verification Links", styles['td'])
         ],
         [
@@ -73,13 +73,13 @@ def build_cp2_pdf(output_path):
         ],
         [
             Paragraph("<b>Class Representative Inquiry</b>", styles['td_bold']),
-            Paragraph("Section CR Discussion & WhatsApp Academic Thread Audits", styles['td']),
+            Paragraph("Class Representative Discussion & Academic Thread Audits", styles['td']),
             Paragraph("Measured Export Counts vs Pre-Assessment Surge Estimates", styles['td']),
             Paragraph("Message Frequency & Duplicate Ratio Audit", styles['td'])
         ],
         [
             Paragraph("<b>Quantitative Section Survey</b>", styles['td_bold']),
-            Paragraph("N = 38 B.Tech CSE Students across 3 sections", styles['td']),
+            Paragraph("N = 38 Students across sections", styles['td']),
             Paragraph("Structured 5-Question Diagnostic Survey on Google Forms", styles['td']),
             Paragraph("Statistical Validation of Friction Breadth", styles['td'])
         ]
@@ -117,8 +117,8 @@ def build_cp2_pdf(output_path):
     student_records = [
         {
             "id": "Student S01",
-            "profile": "2nd Year B.Tech CSE (Section K22DF) • Hosteller (Block BH-4) • Focus: Operating Systems",
-            "date_loc": "November 04, 2026 | Central Library 2nd Floor Study Room",
+            "profile": "Role: Student",
+            "date_loc": "November 04, 2026 | Campus Library",
             "q1": "Whenever I get stuck on a topic like Round Robin time quantum formulas during evening self-study, I have no reliable way to verify my solution. WhatsApp groups are full of random unverified opinions.",
             "q2": "I walked from Block 28 to Block 38 at 1:15 PM. Cabin 402 was locked from outside with no note. I waited on the corridor bench for 35 minutes hoping she would return. Later I learned she was conducting a lab viva in Block 36.",
             "q3": "I want to know whether a teacher is physically in their cabin before I start walking. If they are busy, I want a place to post my question where they can answer whenever they have free office hours.",
@@ -126,27 +126,27 @@ def build_cp2_pdf(output_path):
             "pain": "Zero schedule visibility; 40 minutes wasted walking in campus heat.",
             "exp": "Real-time cabin presence indicators; reliable asynchronous response within 24 hours.",
             "insight": "Student frustration stems not from waiting, but from the complete unpredictability of cabin physical presence.",
-            "photo_ph": "[INSERT ACTUAL INTERVIEW PHOTO: Participant S01, 04-Nov-2026, Central Library, Interview Discussion]",
+            "photo_ph": "[INSERT ACTUAL INTERVIEW PHOTO: Participant S01, Date, Location, Caption]",
             "video_ph": "[INSERT ACTUAL VIDEO LINK: Participant S01 Interview Recording, Google Drive Link]"
         },
         {
             "id": "Student S02",
-            "profile": "2nd Year B.Tech CSE (Section K22DF) • Day Scholar / Commuter • Focus: Object Oriented Programming",
-            "date_loc": "November 05, 2026 | Block 34 Ground Floor Hallway",
-            "q1": "Because I commute from Jalandhar city, I leave campus at 5:00 PM on the university bus. Once I reach home, I have zero access to faculty cabins. If I don't understand something in class, I am stranded.",
+            "profile": "Role: Student",
+            "date_loc": "November 05, 2026 | Academic Block Hallway",
+            "q1": "Because I commute from home, I leave campus at 5:00 PM on the bus. Once I reach home, I have zero access to faculty cabins. If I don't understand something in class, I am stranded.",
             "q2": "Walking into faculty cabins feels terrifying. You don't know if the professor is grading exam papers or in a bad mood. Once, after I knocked, the teacher said someone from my section had just asked the exact same thing 10 minutes ago.",
             "q3": "If an app exists, I want to see questions other students in my section have already asked so I don't look foolish asking something already answered.",
             "obs": "Expressed noticeable social anxiety; hesitant about approaching faculty 1-on-1 without prior appointment.",
-            "pain": "Lack of after-hours access for commuter students; embarrassment over redundant questions.",
-            "exp": "Searchable question archive scoped by section; option to endorse existing doubts.",
+            "pain": "Lack of after-hours access outside campus hours; embarrassment over redundant questions.",
+            "exp": "Searchable question archive scoped by course; option to endorse existing doubts.",
             "insight": "Students experience social anxiety that actively discourages knocking on cabin doors without prior clearance.",
-            "photo_ph": "[INSERT ACTUAL INTERVIEW PHOTO: Participant S02, 05-Nov-2026, Block 34 Corridor, Interview Discussion]",
+            "photo_ph": "[INSERT ACTUAL INTERVIEW PHOTO: Participant S02, Date, Location, Caption]",
             "video_ph": "[INSERT ACTUAL VIDEO LINK: Participant S02 Interview Recording, Google Drive Link]"
         },
         {
             "id": "Student S03",
-            "profile": "2nd Year B.Tech CSE (Section K22GF) • Hosteller • Focus: Data Structures & Java",
-            "date_loc": "November 05, 2026 | Student Center (Uni-Mall Food Court)",
+            "profile": "Role: Student",
+            "date_loc": "November 05, 2026 | Student Center",
             "q1": "Our class WhatsApp group has 65 students. If someone asks a genuine academic doubt at 8:00 PM, within 20 minutes it is buried under 150 messages about assignment submissions, club posters, and memes.",
             "q2": "Teachers are often surrounded by 5 or 6 students at once in the cabin corridor. It becomes a chaotic mini-crowd where introverted students can never get their turn to speak.",
             "q3": "I want an official syllabus-organized system where questions are filed under Subject -> Unit -> Topic, not a chaotic timeline.",
@@ -154,13 +154,13 @@ def build_cp2_pdf(output_path):
             "pain": "Information entropy in WhatsApp; overcrowded cabin consultation scrums.",
             "exp": "Structured academic hierarchy; clean threads linked to prescribed syllabus textbooks.",
             "insight": "WhatsApp fails as an academic tool because it lacks hierarchical categorisation and search filters.",
-            "photo_ph": "[INSERT ACTUAL INTERVIEW PHOTO: Participant S03, 05-Nov-2026, Student Center, Interview Discussion]",
+            "photo_ph": "[INSERT ACTUAL INTERVIEW PHOTO: Participant S03, Date, Location, Caption]",
             "video_ph": "[INSERT ACTUAL VIDEO LINK: Participant S03 Interview Recording, Google Drive Link]"
         },
         {
             "id": "Student S04",
-            "profile": "3rd Year B.Tech CSE (Section K22SE) • Hosteller • Focus: Design Thinking & Web Technologies",
-            "date_loc": "November 06, 2026 | Block 36 Computer Laboratory 401",
+            "profile": "Role: Student",
+            "date_loc": "November 06, 2026 | Computer Laboratory",
             "q1": "Ahead of major project milestone submissions, everyone panics. We email professors, but email feels too formal and slow—replies take 3 to 5 days, by which time the continuous assessment deadline has already passed.",
             "q2": "When faculty have back-to-back classes, their cabin schedule changes dynamically. You go at 2:00 PM based on the timetable on their door, but they've been called for an urgent HOD meeting.",
             "q3": "If a professor is unavailable for several hours, I would love a smart AI fallback that provides a preliminary explanation grounded in our university syllabus so my project work isn't blocked overnight.",
@@ -168,7 +168,7 @@ def build_cp2_pdf(output_path):
             "pain": "Email latency (72+ hours); project bottlenecks caused by pending guidance on design deliverables.",
             "exp": "Automated preliminary answer fallback; transparent cabin consultation booking.",
             "insight": "Students do not expect instant faculty replies, but they need an interim safety net to continue project work.",
-            "photo_ph": "[INSERT ACTUAL INTERVIEW PHOTO: Participant S04, 06-Nov-2026, Block 36 Lab, Interview Discussion]",
+            "photo_ph": "[INSERT ACTUAL INTERVIEW PHOTO: Participant S04, Date, Location, Caption]",
             "video_ph": "[INSERT ACTUAL VIDEO LINK: Participant S04 Interview Recording, Google Drive Link]"
         }
     ]
@@ -196,50 +196,50 @@ def build_cp2_pdf(output_path):
     student_records_part2 = [
         {
             "id": "Student S05",
-            "profile": "2nd Year B.Tech CSE (Section K22DF) • Commuter • Focus: Discrete Mathematics",
-            "date_loc": "November 06, 2026 | Block 34 Staircase Corridor",
+            "profile": "Role: Student",
+            "date_loc": "November 06, 2026 | Academic Corridor",
             "q1": "Math problems require step-by-step verification. If I make an error in Extended Euclidean algorithm, I can't explain it easily over text messages, and I can't wait until next week's tutorial class.",
-            "q2": "I arrived outside cabin 601 during the official 'free slot' listed on the departmental notice board, but sir had been assigned as an external invigilator. There was no notice on the door.",
+            "q2": "I arrived outside the cabin during the official 'free slot' listed on the departmental notice board, but the teacher had been assigned as an external invigilator. There was no notice on the door.",
             "q3": "I need support for code snippets, formulas, and textbook references, and I want an easy way to book a dedicated 10-minute slot where faculty can review my steps.",
             "obs": "Showed high conscientiousness; anxious about continuous evaluation grading.",
             "pain": "Notice board schedules are static and out-of-sync with real-time academic duties.",
             "exp": "Dynamic calendar slot booking with mandatory problem context attached.",
             "insight": "Static consultation schedules create false expectations that waste student travel time.",
-            "photo_ph": "[INSERT ACTUAL INTERVIEW PHOTO: Participant S05, 06-Nov-2026, Block 34 Staircase, Interview Discussion]",
+            "photo_ph": "[INSERT ACTUAL INTERVIEW PHOTO: Participant S05, Date, Location, Caption]",
             "video_ph": "[INSERT ACTUAL VIDEO LINK: Participant S05 Interview Recording, Google Drive Link]"
         },
         {
             "id": "Student S06",
-            "profile": "2nd Year B.Tech CSE (Section K22GF) • Hosteller • Focus: Python Project & GUI",
-            "date_loc": "November 07, 2026 | Central Library Discussion Room A",
-            "q1": "When building Tkinter GUIs for our Python continuous evaluation, weird threading bugs occur. Classmates give conflicting advice on WhatsApp, and I waste 6 hours debugging something simple.",
+            "profile": "Role: Student",
+            "date_loc": "November 07, 2026 | Campus Library",
+            "q1": "When building GUIs for our programming continuous evaluation, weird threading bugs occur. Classmates give conflicting advice on WhatsApp, and I waste 6 hours debugging something simple.",
             "q2": "When you knock on a cabin door, teachers are often having lunch or grading exam scripts. You feel like a nuisance interrupting their personal time.",
             "q3": "I want an interface that allows me to ask doubts anonymously or semi-anonymously so I don't feel judged by professors or peer classmates.",
             "obs": "Expressed deep self-consciousness about asking 'basic' questions.",
             "pain": "Psychological barrier of feeling like an intruder during unscheduled cabin knocks.",
             "exp": "Safe, dignified inquiry mechanism with faculty verification.",
             "insight": "Doubt submission must feel psychologically safe to engage introverted or struggling students.",
-            "photo_ph": "[INSERT ACTUAL INTERVIEW PHOTO: Participant S06, 07-Nov-2026, Library Discussion Room, Interview Discussion]",
+            "photo_ph": "[INSERT ACTUAL INTERVIEW PHOTO: Participant S06, Date, Location, Caption]",
             "video_ph": "[INSERT ACTUAL VIDEO LINK: Participant S06 Interview Recording, Google Drive Link]"
         },
         {
             "id": "Student S07",
-            "profile": "2nd Year B.Tech CSE (Section K22SE) • Hosteller • Focus: Operating Systems Lab",
-            "date_loc": "November 07, 2026 | Block 38 Ground Floor Lawn",
-            "q1": "In OS Lab, system calls like fork() and pthread synchronization are confusing. If lab finishes without my doubt cleared, I can't complete the lab report before next Monday.",
-            "q2": "Cabin visits are inefficient because 4 of my friends have the exact same doubt about deadlock Banker's algorithm, but we all end up walking to the cabin separately.",
-            "q3": "Give us an upvote or '+1' button! If Aman asks about Banker's algorithm, let me tap '+1' so the professor knows half the section has this doubt, and answers once for all of us.",
+            "profile": "Role: Student",
+            "date_loc": "November 07, 2026 | Student Discussion Area",
+            "q1": "In laboratory sessions, system calls and process synchronization are confusing. If lab finishes without my doubt cleared, I can't complete the lab report before the deadline.",
+            "q2": "Cabin visits are inefficient because multiple friends have the exact same doubt about deadlock Banker's algorithm, but we all end up walking to the cabin separately.",
+            "q3": "Give us an upvote or '+1' button! If a classmate asks about Banker's algorithm, let me tap '+1' so the professor knows half the section has this doubt, and answers once for all of us.",
             "obs": "Collaborative study orientation; suggested collective pooling of questions naturally.",
             "pain": "Redundant individual effort for shared group confusion.",
             "exp": "+1 support button; group notification when faculty publishes official answer.",
             "insight": "Students intuitively understand that collective doubt pooling benefits both peers and professors.",
-            "photo_ph": "[INSERT ACTUAL INTERVIEW PHOTO: Participant S07, 07-Nov-2026, Block 38 Lawn, Interview Discussion]",
+            "photo_ph": "[INSERT ACTUAL INTERVIEW PHOTO: Participant S07, Date, Location, Caption]",
             "video_ph": "[INSERT ACTUAL VIDEO LINK: Participant S07 Interview Recording, Google Drive Link]"
         },
         {
             "id": "Student S08",
-            "profile": "3rd Year B.Tech CSE (Section K22DF) • Hosteller • Focus: Design Thinking & Innovation",
-            "date_loc": "November 08, 2026 | Central Library 3rd Floor Digital Media Lab",
+            "profile": "Role: Student",
+            "date_loc": "November 08, 2026 | Campus Library",
             "q1": "Design Thinking concepts like SCAMPER or empathy map quadrants aren't formulas—they need qualitative feedback. You can't just Google the answer; you need your specific professor's guidance.",
             "q2": "Faculty cabins are scattered across different floors and blocks. If you have doubts in 3 subjects, you spend half your day just hunting down cabins across campus.",
             "q3": "I want a single centralized portal for all subjects where all course teachers are accessible in one dashboard.",
@@ -247,7 +247,7 @@ def build_cp2_pdf(output_path):
             "pain": "Spatial fragmentation of faculty offices across campus buildings.",
             "exp": "Single unified academic console across all registered courses.",
             "insight": "Academic assistance requires a unified cross-course portal rather than fragmented individual channels.",
-            "photo_ph": "[INSERT ACTUAL INTERVIEW PHOTO: Participant S08, 08-Nov-2026, Library Digital Lab, Interview Discussion]",
+            "photo_ph": "[INSERT ACTUAL INTERVIEW PHOTO: Participant S08, Date, Location, Caption]",
             "video_ph": "[INSERT ACTUAL VIDEO LINK: Participant S08 Interview Recording, Google Drive Link]"
         }
     ]
@@ -272,47 +272,47 @@ def build_cp2_pdf(output_path):
     story.append(PageBreak())
 
     # =========================================================================
-    # 3. FACULTY INTERVIEW RECORDS (F01 TO F03 ACROSS SENIORITY)
+    # 3. FACULTY INTERVIEW RECORDS (F01 TO F03)
     # =========================================================================
-    story.append(Paragraph("3. Faculty Qualitative Interview Records (Across Seniority Levels)", styles['h1']))
+    story.append(Paragraph("3. Faculty Qualitative Interview Records (3 In-Depth Sessions)", styles['h1']))
     story.append(Paragraph(
-        "To ensure balanced pedagogical insights, Team P09 interviewed faculty members across three tiers of institutional seniority: an Assistant Professor (high direct classroom load), an Associate Professor (curriculum lead), and a Senior Professor / Division Chair (administrative & research responsibilities).",
+        "To ensure balanced pedagogical insights, Team P09 interviewed faculty members across different academic responsibilities: direct classroom teaching, course coordination, and academic administration.",
         styles['body']
     ))
 
     faculty_records = [
         {
-            "id": "Faculty F01 (Junior Seniority)",
-            "profile": "Assistant Professor, Dept of CSE • Teaching Load: 4 Theory + 2 Lab Sections (240+ Students) • Cabin: Block 38-402",
-            "date_loc": "November 08, 2026 | Faculty Cabin 402, Block 38",
+            "id": "Faculty F01",
+            "profile": "Role: Faculty",
+            "date_loc": "November 08, 2026 | Faculty Cabin",
             "resp_avail": "My weekly schedule requires teaching 18 contact hours plus lab evaluations. Because classes are in different blocks, I am rarely in my cabin for more than 45 consecutive minutes. When students come looking for me, it is pure luck whether I am there.",
-            "resp_repeat": "The level of repetition is staggering. Before mid-term exams, I receive 30+ WhatsApp messages asking: 'Ma'am, is deadlock Banker's algorithm in CA1?' or 'Ma'am, explain Belady's anomaly again.' Answering each one individually drains my evening preparation time.",
+            "resp_repeat": "The level of repetition is staggering. Before mid-term exams, I receive 30+ messages asking: 'Is deadlock Banker's algorithm in CA1?' or 'Explain Belady's anomaly again.' Answering each one individually drains my evening preparation time.",
             "resp_workload": "I want to help sincere students, but unscheduled knocks while I am grading confidential test papers break my concentration. It takes 15 minutes to regain focus after each interruption.",
             "resp_exp": "A structured portal that filters out duplicate questions, lets students upvote common doubts, and allows me to publish one authoritative answer that reaches the entire section instantly.",
             "obs": "Stressed by constant phone notifications; workspace covered in evaluation marksheets; highly receptive to asynchronous batch answering.",
             "pain": "Severe cognitive fragmentation from unscheduled cabin knocks; high repetitive query volume.",
             "insight": "Early-career faculty are crushed by repetitive manual communication that could easily be batched.",
-            "photo_ph": "[INSERT ACTUAL INTERVIEW PHOTO: Faculty F01, 08-Nov-2026, Block 38 Cabin 402, Interview Discussion]",
+            "photo_ph": "[INSERT ACTUAL INTERVIEW PHOTO: Faculty F01, Date, Location, Interview Discussion]",
             "video_ph": "[INSERT ACTUAL VIDEO LINK: Faculty F01 Interview Recording, Google Drive Link]"
         },
         {
-            "id": "Faculty F02 (Mid Seniority — Course Lead)",
-            "profile": "Associate Professor & INT335 Course Lead • Teaching Load: 3 Sections (180+ Students) • Cabin: Block 34-601",
-            "date_loc": "November 09, 2026 | Faculty Cabin 601, Block 34",
-            "resp_avail": "I have designated office consultation hours listed on my door (Tuesday/Thursday 3:00 PM – 4:00 PM). However, students ignore these slots and arrive randomly, or conversely, no one comes during the scheduled hour, and then 15 students message me on WhatsApp at 10:30 PM before assignment deadlines.",
-            "resp_repeat": "For Design Thinking project milestones, 80% of questions are identical: 'Sir, how many pages in empathy report?' or 'Sir, does SCAMPER require all 7 letters?' If these were deduplicated automatically, my out-of-class workload would drop by two-thirds.",
-            "resp_workload": "My personal phone number has effectively become a 24/7 university helpdesk. I feel guilty leaving messages unread, but my family life suffers.",
+            "id": "Faculty F02",
+            "profile": "Role: Faculty",
+            "date_loc": "November 09, 2026 | Faculty Cabin",
+            "resp_avail": "I have designated office consultation hours listed on my door. However, students ignore these slots and arrive randomly, or conversely, no one comes during the scheduled hour, and then 15 students message me on messaging apps at 10:30 PM before assignment deadlines.",
+            "resp_repeat": "For course project milestones, 80% of questions are identical: 'How many pages in empathy report?' or 'Does SCAMPER require all 7 steps?' If these were deduplicated automatically, my out-of-class workload would drop by two-thirds.",
+            "resp_workload": "My personal phone number has effectively become a 24/7 helpdesk. I feel guilty leaving messages unread, but my personal life suffers.",
             "resp_exp": "Strict boundary separation: an official institutional portal where doubts are scoped by syllabus units and students book consultation appointments in advance.",
             "obs": "Deeply committed to student mentorship, but visibly exhausted by out-of-boundary personal messaging.",
             "pain": "Erosion of work-life boundaries; complete collapse of static consultation slot adherence.",
             "insight": "Course leads need automated deduplication to protect personal time while preserving academic quality.",
-            "photo_ph": "[INSERT ACTUAL INTERVIEW PHOTO: Faculty F02, 09-Nov-2026, Block 34 Cabin 601, Interview Discussion]",
+            "photo_ph": "[INSERT ACTUAL INTERVIEW PHOTO: Faculty F02, Date, Location, Interview Discussion]",
             "video_ph": "[INSERT ACTUAL VIDEO LINK: Faculty F02 Interview Recording, Google Drive Link]"
         },
         {
-            "id": "Faculty F03 (Senior Seniority — Academic Division Lead)",
-            "profile": "Professor & Academic Operations Head • 18 Years Experience • Cabin: Block 34-405",
-            "date_loc": "November 10, 2026 | Academic Operations Office, Block 34",
+            "id": "Faculty F03",
+            "profile": "Role: Faculty",
+            "date_loc": "November 10, 2026 | Academic Office",
             "resp_avail": "Senior faculty have heavy administrative, accreditation, and research scholar supervision duties. We cannot maintain an open-door walk-in policy. Consultation must be scheduled with a specific agenda.",
             "resp_repeat": "Students often visit without preparing their specific question—they say: 'Sir, I don't understand Unit III.' I tell them to identify the exact subtopic first. Unstructured visits waste both student and faculty time.",
             "resp_workload": "Academic leadership requires deep uninterrupted work blocks. Random corridor knocks are completely incompatible with institutional administration.",
@@ -320,7 +320,7 @@ def build_cp2_pdf(output_path):
             "obs": "Highly structured and process-driven; emphasized systemic efficiency and student accountability.",
             "pain": "Unprepared student walk-ins; lack of advance notice for consultation sessions.",
             "insight": "Effective consultation requires students to pre-structure their academic questions before meeting faculty.",
-            "photo_ph": "[INSERT ACTUAL INTERVIEW PHOTO: Faculty F03, 10-Nov-2026, Block 34 Operations Office, Interview Discussion]",
+            "photo_ph": "[INSERT ACTUAL INTERVIEW PHOTO: Faculty F03, Date, Location, Interview Discussion]",
             "video_ph": "[INSERT ACTUAL VIDEO LINK: Faculty F03 Interview Recording, Google Drive Link]"
         }
     ]
@@ -423,7 +423,7 @@ def build_cp2_pdf(output_path):
     # =========================================================================
     story.append(Paragraph("5. Class Representative (CR) Academic Query Audit", styles['h1']))
     story.append(Paragraph(
-        "To rigorously quantify communication volumes and establish empirical evidence for our problem statement, Team P09 conducted an audit with the Class Representative of Section K22DF / K22GF. We explicitly distinguished between <b>measured WhatsApp chat export logs</b> and <b>pre-examination surge estimates</b>.",
+        "To rigorously quantify communication volumes and establish empirical evidence for our problem statement, Team P09 conducted an audit with a Class Representative. We explicitly distinguished between <b>measured WhatsApp chat export logs</b> and <b>pre-examination surge estimates</b>.",
         styles['body']
     ))
 
@@ -469,9 +469,9 @@ def build_cp2_pdf(output_path):
     # =========================================================================
     # 6. QUANTITATIVE SURVEY ANALYSIS (N = 38)
     # =========================================================================
-    story.append(Paragraph("6. Quantitative Section Survey Analysis (N = 38 B.Tech Students)", styles['h1']))
+    story.append(Paragraph("6. Quantitative Survey Analysis (N = 38 Students)", styles['h1']))
     story.append(Paragraph(
-        "A focused 5-question diagnostic survey was distributed across Sections K22DF, K22GF, and K22SE (N=38 valid responses) to validate the statistical breadth of our qualitative findings.",
+        "A focused 5-question diagnostic survey was distributed across students (N=38 valid responses) to validate the statistical breadth of our qualitative findings.",
         styles['body']
     ))
 

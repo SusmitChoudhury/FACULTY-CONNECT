@@ -2,6 +2,7 @@ import os
 import sys
 
 from generate_diagrams import generate_all_diagrams
+from render_mockups_and_flow import generate_github_mermaid_user_flow, generate_figma_screen_mockups
 from build_cp2 import build_cp2_pdf
 from build_cp3 import build_cp3_pdf
 from build_cp4 import build_cp4_pdf
@@ -20,6 +21,8 @@ def main():
 
     print("\n[Stage 1/7] Generating visual diagram assets...")
     generate_all_diagrams()
+    generate_github_mermaid_user_flow()
+    generate_figma_screen_mockups()
 
     print("\n[Stage 2/7] Generating CP2: Empathy & User Research...")
     build_cp2_pdf(os.path.join(out_dir, 'CP2_Empathy_and_User_Research.pdf'))

@@ -407,216 +407,6 @@ def create_testing_before_after(filename):
     return out_path
 
 
-def generate_all_diagrams():
-    """Generates all diagram image assets needed across checkpoints."""
-    print("Generating Empathy Map: Student...")
-    create_empathy_map(
-        "Student Empathy Map",
-        "Target: Undergraduate Engineering Students (LPU)",
-        {
-            'says': [
-                '"Sir, are you free for 5 minutes?"',
-                '"Did anyone ask about question 3 on WhatsApp?"',
-                '"I waited outside his cabin for 40 minutes."',
-                '"I was too embarrassed to knock on the door."'
-            ],
-            'thinks': [
-                '"Will the professor think my doubt is stupid?"',
-                '"What if he is busy grading or in a meeting?"',
-                '"I really need this clarified before tomorrow\'s CA."',
-                '"WhatsApp is completely flooded with irrelevant spam."'
-            ],
-            'does': [
-                'Wanders Block 34/38 corridors searching cabins',
-                'Repeatedly checks WhatsApp class groups',
-                'Asks classmates before approaching faculty',
-                'Gives up and resorts to unreliable YouTube tutorials'
-            ],
-            'feels': [
-                'High anxiety before exams and continuous evaluations',
-                'Hesitation and intimidation knocking on cabin doors',
-                'Frustration over wasted walking and waiting transit',
-                'Overwhelmed by scattered, unorganized communications'
-            ]
-        },
-        "empathy_map_student.png"
-    )
-
-    print("Generating Empathy Map: Faculty...")
-    create_empathy_map(
-        "Faculty Empathy Map",
-        "Target: Engineering Faculty & Course Coordinators (LPU)",
-        {
-            'says': [
-                '"Please do not message me on WhatsApp after 8 PM."',
-                '"I already explained this exact concept in Unit II."',
-                '"Come during my free consultation hour on Thursday."',
-                '"Email me your question with proper subject code."'
-            ],
-            'thinks': [
-                '"I wish students checked if someone else asked this."',
-                '"I have 3 lecture preps, research papers, and lab grading."',
-                '"My personal phone number has become a 24/7 helpdesk."',
-                '"I want to help sincere students, but I am exhausted."'
-            ],
-            'does': [
-                'Answers identical questions repeatedly across sections',
-                'Locks cabin door during research or continuous grading',
-                'Receives unscheduled cabin knocks mid-thought',
-                'Feels guilty when student doubts remain unaddressed'
-            ],
-            'feels': [
-                'Overwhelmed by fragmented communication channels',
-                'Fatigued by repetitive low-level syllabus queries',
-                'Anxious about boundary invasion on personal messaging',
-                'Frustrated by lack of structured consultation slots'
-            ]
-        },
-        "empathy_map_faculty.png"
-    )
-
-    print("Generating Personas...")
-    create_persona_card(
-        "Rohan Patel",
-        "2nd Year B.Tech CSE (Section K22GF) • Age: 20 • Commuter Student",
-        "I just want clear, textbook-grounded answers without wasting an hour in cabin corridors.",
-        [
-            ("Section", "K22GF"),
-            ("Attendance", "88%"),
-            ("Tech Comfort", "High (Mobile/Web)"),
-            ("Major Focus", "Data Structures & Java")
-        ],
-        [
-            "Get fast, authoritative clarification on lecture doubts ahead of CAs.",
-            "Know exactly when professors are physically free in cabins.",
-            "Avoid asking redundant questions already answered for classmates."
-        ],
-        [
-            "Cabin hunting between Block 34 and 38 only to find locked doors.",
-            "WhatsApp groups buried under hundreds of unrelated messages.",
-            "Intimidation when asking questions in front of 60 peers in lecture hall."
-        ],
-        "persona_student_rohan.png"
-    )
-
-    create_persona_card(
-        "Dr. Rajesh Sharma",
-        "Associate Professor & INT335 Course Lead • Cabin: Block 34-601",
-        "I love teaching, but answering the same doubt 30 times on WhatsApp drains my research energy.",
-        [
-            ("Teaching Load", "3 Courses (180+ Students)"),
-            ("Cabin", "Block 34, Cabin 601"),
-            ("Experience", "12 Years Academic"),
-            ("Key Focus", "Design Thinking & Algorithms")
-        ],
-        [
-            "Protect deep-work hours for research, curriculum development, and grading.",
-            "Answer student academic queries efficiently without redundant repetition.",
-            "Maintain organized, scheduled face-to-face consultation hours in cabin."
-        ],
-        [
-            "Receiving 20-30 identical questions about SCAMPER before assignment deadlines.",
-            "Unscheduled door knocks during confidential evaluation grading.",
-            "Blurry boundaries between personal WhatsApp life and academic consultations."
-        ],
-        "persona_faculty_dr_sharma.png"
-    )
-
-    print("Generating Journey Maps...")
-    create_journey_map(
-        "Current Student Experience: Journey Map",
-        [
-            {
-                'name': 'Doubt Emerges',
-                'actions': 'Studies lecture notes at hostel; gets stuck on concept.',
-                'thoughts': 'This wasn\'t clear in lecture today.',
-                'pain_point': 'No immediate way to verify textbook accuracy.',
-                'valence': 0,
-                'valence_label': 'Confused'
-            },
-            {
-                'name': 'Search for Info',
-                'actions': 'Checks WhatsApp group; asks roommates.',
-                'thoughts': 'Group has 200 unread memes and spam.',
-                'pain_point': 'Scattered, unsearchable chat messages.',
-                'valence': -1,
-                'valence_label': 'Frustrated'
-            },
-            {
-                'name': 'Cabin Transit',
-                'actions': 'Walks from Block 28 to Block 34 in 35°C heat.',
-                'thoughts': 'Hope sir is in his cabin today.',
-                'pain_point': 'Zero visibility of professor\'s physical schedule.',
-                'valence': -1,
-                'valence_label': 'Anxious'
-            },
-            {
-                'name': 'Corridor Wait',
-                'actions': 'Finds cabin closed; waits on staircase 30 mins.',
-                'thoughts': 'Did he go for lunch or a departmental meeting?',
-                'pain_point': 'Wasted time; missed next lecture preparation.',
-                'valence': -2,
-                'valence_label': 'Defeated'
-            },
-            {
-                'name': 'Resolution / Loss',
-                'actions': 'Gives up; turns to random YouTube video or skips.',
-                'thoughts': 'I guess I\'ll just wing this in the CA.',
-                'pain_point': 'Academic concept remains fundamentally unmastered.',
-                'valence': -2,
-                'valence_label': 'Hopeless'
-            }
-        ],
-        "journey_map_student.png"
-    )
-
-    create_journey_map(
-        "Current Faculty Experience: Journey Map",
-        [
-            {
-                'name': 'Lecture Delivery',
-                'actions': 'Delivers 50-minute lecture to 65 students in hall.',
-                'thoughts': 'Covered syllabus, but some students seemed hesitant.',
-                'pain_point': 'Limited time for 1-on-1 questions during lecture.',
-                'valence': 1,
-                'valence_label': 'Engaged'
-            },
-            {
-                'name': 'Cabin Return',
-                'actions': 'Returns to cabin to grade mid-term evaluation papers.',
-                'thoughts': 'Need 2 uninterrupted hours for university grading.',
-                'pain_point': 'Knocks at door begin within 10 minutes.',
-                'valence': 0,
-                'valence_label': 'Guarded'
-            },
-            {
-                'name': 'Unscheduled Knocks',
-                'actions': 'Answers door; 3 students ask same question consecutively.',
-                'thoughts': 'I literally just answered this 5 minutes ago.',
-                'pain_point': 'Extreme cognitive fragmentation and frustration.',
-                'valence': -1,
-                'valence_label': 'Interrupted'
-            },
-            {
-                'name': 'WhatsApp Flood',
-                'actions': 'Opens phone at 9 PM; 45 unread doubt messages.',
-                'thoughts': 'My personal evening is completely gone.',
-                'pain_point': 'No boundary between work and personal life.',
-                'valence': -2,
-                'valence_label': 'Overwhelmed'
-            },
-            {
-                'name': 'Backlog Fatigue',
-                'actions': 'Types copy-paste replies; leaves half unread.',
-                'thoughts': 'I feel guilty, but this system is unsustainable.',
-                'pain_point': 'Faculty burnout; delayed support for sincere doubts.',
-                'valence': -1,
-                'valence_label': 'Burnout'
-            }
-        ],
-        "journey_map_faculty.png"
-    )
-
 def create_step_by_step_user_flow(filename):
     """
     Renders a clean academic, step-by-step user flow diagram in black and white
@@ -930,37 +720,37 @@ def generate_all_diagrams():
 
     print("Generating Personas...")
     create_persona_card(
-        "Rohan Patel",
-        "2nd Year B.Tech CSE (Section K22GF) • Age: 20 • Commuter Student",
-        "I just want clear, textbook-grounded answers without wasting an hour in cabin corridors.",
+        "Anonymous Student",
+        "Role: Student",
+        "I just want clear, textbook-grounded answers without wasting an hour waiting outside faculty cabins.",
         [
-            ("Section", "K22GF"),
-            ("Attendance", "88%"),
+            ("Role", "Student"),
+            ("Attendance", "Regular"),
             ("Tech Comfort", "High (Mobile/Web)"),
-            ("Major Focus", "Data Structures & Java")
+            ("Primary Goal", "Clear Academic Doubts")
         ],
         [
-            "Get fast, authoritative clarification on lecture doubts ahead of CAs.",
+            "Get fast, authoritative clarification on lecture doubts ahead of examinations.",
             "Know exactly when professors are physically free in cabins.",
             "Avoid asking redundant questions already answered for classmates."
         ],
         [
-            "Cabin hunting between Block 34 and 38 only to find locked doors.",
+            "Cabin hunting across campus corridors only to find locked doors.",
             "WhatsApp groups buried under hundreds of unrelated messages.",
-            "Intimidation when asking questions in front of 60 peers in lecture hall."
+            "Intimidation when asking questions in front of peers in lecture hall."
         ],
         "persona_student_rohan.png"
     )
 
     create_persona_card(
-        "Dr. Rajesh Sharma",
-        "Associate Professor & INT335 Course Lead • Cabin: Block 34-601",
-        "I love teaching, but answering the same doubt 30 times on WhatsApp drains my research energy.",
+        "Anonymous Faculty",
+        "Role: Faculty",
+        "I want to support sincere students, but answering identical questions repeatedly drains my academic energy.",
         [
-            ("Teaching Load", "3 Courses (180+ Students)"),
-            ("Cabin", "Block 34, Cabin 601"),
-            ("Experience", "12 Years Academic"),
-            ("Key Focus", "Design Thinking & Algorithms")
+            ("Role", "Faculty"),
+            ("Responsibilities", "Course Instruction & Evaluation"),
+            ("Mode", "In-Person & Digital Guidance"),
+            ("Primary Goal", "Pedagogical Clarity")
         ],
         [
             "Protect deep-work hours for research, curriculum development, and grading.",
@@ -968,9 +758,9 @@ def generate_all_diagrams():
             "Maintain organized, scheduled face-to-face consultation hours in cabin."
         ],
         [
-            "Receiving 20-30 identical questions about SCAMPER before assignment deadlines.",
+            "Receiving repetitive identical questions before assignment deadlines.",
             "Unscheduled door knocks during confidential evaluation grading.",
-            "Blurry boundaries between personal WhatsApp life and academic consultations."
+            "Blurry boundaries between personal life and academic consultations."
         ],
         "persona_faculty_dr_sharma.png"
     )

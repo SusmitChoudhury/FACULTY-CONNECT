@@ -97,7 +97,7 @@ def build_cp7_pdf(output_path):
     # Personas & POV Summary
     story.append(Paragraph("3. Target Archetypes & Problem Framing (POV & HMW)", styles['h1']))
     story.append(Paragraph(
-        "We framed the design space around two validated archetypes: <b>Rohan Patel</b> (the anxious 2nd-year commuter student) and <b>Dr. Rajesh Sharma</b> (the overworked associate professor). Our inquiry crystallized into our selected Main How Might We question:",
+        "We framed the design space around two validated archetypes: the <b>Student Persona</b> and the <b>Faculty Persona</b>. Our inquiry crystallized into our selected Main How Might We question:",
         styles['body']
     ))
 
@@ -116,11 +116,12 @@ def build_cp7_pdf(output_path):
         "Through Brainwriting 6-3-5, Crazy 8s, and SCAMPER, 36 concepts were generated and screened via an objective, pre-weighted decision matrix. <b>Faculty Connect (Concept F)</b> scored 4.56/5.0, dominating alternative ideas such as physical LED door signs (high maintenance), WhatsApp bots (unstructured noise), and peer forums (low trust for grading).",
         styles['body']
     ))
+    story.append(Spacer(1, 6))
 
-    # System Architecture Graphic
-    flow_img = os.path.join(ASSETS_DIR, 'user_flow_step_by_step_academic.png')
+    # System Architecture Graphic - EXACT MATCH WITH GITHUB MERMAID
+    flow_img = os.path.join(ASSETS_DIR, 'github_mermaid_user_flow.png')
     if os.path.exists(flow_img):
-        story.append(Image(flow_img, width=540, height=350))
+        story.append(Image(flow_img, width=480, height=655))
         story.append(Spacer(1, 6))
         story.append(Paragraph("<b>Figure 7.1:</b> Faculty Connect Dual-Track System Architecture & Resolution Workflow.", styles['callout']))
 
@@ -143,6 +144,15 @@ def build_cp7_pdf(output_path):
         "The finalized Faculty Connect platform is deployed live on cloud container infrastructure, accessible worldwide with full desktop, tablet, and mobile PWA support.",
         styles['body']
     ))
+
+    # Embed Visual Figma Screen Mockups in Section 6
+    figma_mockups_img = os.path.join(ASSETS_DIR, 'figma_screen_mockups_combined.png')
+    if os.path.exists(figma_mockups_img):
+        story.append(Image(figma_mockups_img, width=540, height=415))
+        story.append(Spacer(1, 6))
+        story.append(Paragraph("<b>Figure 7.2:</b> Production System Screen Architecture — Student Doubt Modal, Duplicate Alert with '+1', Teacher Console Queue, and Official Answer Drawer.", styles['callout']))
+
+    story.append(Spacer(1, 10))
 
     live_meta_html = """
     <b>Production Cloud Deployment Details:</b><br/>
@@ -202,11 +212,11 @@ def build_cp7_pdf(output_path):
     # Individual Contribution Statements for all 4 members
     members = [
         ("Aryan Singh", "12516621", "P09", "Field Research & Usability Lead",
-         "Conducted 2 student interviews (Aman C., Priya S.); executed AEIOU field observations in Block 34/38; generated 9 concepts in Crazy 8s (initials AS); observed Participant P1 and P5 during usability testing; authored Empathy Research and Problem Definition sections; spoke on Fieldwork in Final Presentation.",
+         "Conducted 2 student interviews (S01, S02); executed AEIOU field observations in Block 34/38; generated 9 concepts in Crazy 8s (initials AS); observed Participant P1 and P5 during usability testing; authored Empathy Research and Problem Definition sections; spoke on Fieldwork in Final Presentation.",
          "CP2 Fieldwork Logs, CP4 Ideas 1, 5, 9, 14, 18, 21, 25, 29, 33; CP6 Test Log P1/P5."),
 
         ("Kaya Hamir Reddy", "12516680", "P09", "Qualitative Interviewer & Journey Specialist",
-         "Conducted faculty interviews with Dr. Rajesh Sharma and Dr. Harpreet Kaur; formulated multi-stakeholder Empathy Maps; synthesized Student and Faculty current-state Journey Maps; generated 9 concepts in SCAMPER/Crazy 8s (initials KH); facilitated testing sessions for Participant P2 and P4; authored Journey Mapping and Persona chapters.",
+         "Conducted faculty interviews with F01 and F02; formulated multi-stakeholder Empathy Maps; synthesized Student and Faculty current-state Journey Maps; generated 9 concepts in SCAMPER/Crazy 8s (initials KH); facilitated testing sessions for Participant P2 and P4; authored Journey Mapping and Persona chapters.",
          "CP2 Faculty Transcripts, CP3 Journey Maps Fig 3.3/3.4; CP4 Ideas 4, 6, 11, 16, 22, 26, 30, 34; CP6 Test Log P2/P4."),
 
         ("Aditya Tiwari", "12516873", "P09", "Ideation Coordinator & Test Evaluator",
@@ -243,7 +253,7 @@ def build_cp7_pdf(output_path):
     slides = [
         ("Slide 1: Title & Team", "Project ID: P09 • Faculty Connect • 'Heard in Class, Lost After' • LPU CSE Department • All 4 Members."),
         ("Slide 2: The Core Problem", "68% repeated questions, locked cabin doors, 45-min transit waste, chaotic WhatsApp noise."),
-        ("Slide 3: User Archetypes", "Rohan Patel (Commuter Student with high CA anxiety) & Dr. Rajesh Sharma (Overburdened Faculty Lead)."),
+        ("Slide 3: User Archetypes", "Student Persona & Faculty Persona grounded in empirical research."),
         ("Slide 4: Empathy Research", "8 In-depth interviews, 6 AEIOU observation sessions, physical cabin corridors in Blocks 34 & 38."),
         ("Slide 5: Key Latent Insights", "Students hesitate out of social fear; faculty burn out from copy-pasting identical answers."),
         ("Slide 6: Selected Main HMW", "'How might we make academic consultation predictable and timely without increasing faculty workload?'"),
@@ -292,7 +302,7 @@ def build_cp7_pdf(output_path):
 
         ("Susmit Choudhury (12517025) — Focus: Prototype Iteration & Technical Testing",
          "Q: What critical failure occurred in testing and how did you resolve it?<br/>"
-         "A: In Round 1, Dr. Sharma clicked publish, but the modal drawer remained stuck open and the doubt stayed 'Pending'. He didn't know if his answer saved. We refactored the state machine to instantly update doubt status to 'Resolved' and auto-close the drawer (setSelectedDoubt(null)).")
+         "A: In Round 1, a faculty participant clicked publish, but the modal drawer remained stuck open and the doubt stayed 'Pending'. They didn't know if their answer saved. We refactored the state machine to instantly update doubt status to 'Resolved' and auto-close the drawer (setSelectedDoubt(null)).")
     ]
 
     for v_title, v_qa in viva_guides:

@@ -80,16 +80,17 @@ def build_cp5_pdf(output_path):
     # 2. Visual User Flow Architecture
     story.append(Paragraph("2. Comprehensive System User Flow Architecture", styles['h1']))
     story.append(Paragraph(
-        "The user flow diagrams below illustrate the main operational tracks for student inquiry and faculty resolution, explicitly detailing decision branches, duplicate detection pathways, and error/fallback states.",
+        "The complete user flow diagram below maps the operational tracks for student inquiry and faculty resolution, matching the institutional GitHub flowchart architecture with 4 integrated modules: Student Academic Journey, 3-Hour SLA Fallback Safety Net, Faculty Multi-Method Resolution, and Cabin Consultation Booking.",
         styles['body']
     ))
+    story.append(Spacer(1, 6))
 
-    # User Flow Image
-    flow_img = os.path.join(ASSETS_DIR, 'user_flow_step_by_step_academic.png')
+    # User Flow Image (Exact match with GitHub README Mermaid)
+    flow_img = os.path.join(ASSETS_DIR, 'github_mermaid_user_flow.png')
     if os.path.exists(flow_img):
-        story.append(Image(flow_img, width=540, height=350))
+        story.append(Image(flow_img, width=480, height=655))
         story.append(Spacer(1, 6))
-        story.append(Paragraph("<b>Figure 5.1:</b> Dual-track User Flow showing student doubt submission with duplicate detection and faculty 1-click resolution.", styles['callout']))
+        story.append(Paragraph("<b>Figure 5.1:</b> Dual-track User Flow showing student doubt submission with duplicate detection, 3-hour SLA AI fallback, and faculty direct resolution.", styles['callout']))
 
     story.append(Spacer(1, 14))
 
@@ -111,33 +112,33 @@ def build_cp5_pdf(output_path):
         ],
         [
             Paragraph("<b>Panel 1:<br/>Doubt Emergence</b>", styles['td_bold']),
-            Paragraph("Rohan is studying Operating Systems at 8:30 PM in his hostel room. He is completely stuck on the difference between Paging and Segmentation.", styles['td']),
-            Paragraph("Rohan opens Faculty Connect on his phone, taps CSE316, and selects Unit V (Memory Management).", styles['td'])
+            Paragraph("A student is studying course concepts at 8:30 PM in their room. They are completely stuck on key formula derivations ahead of continuous evaluation.", styles['td']),
+            Paragraph("The student opens Faculty Connect on their phone, selects the registered course, and navigates to the relevant unit topic.", styles['td'])
         ],
         [
             Paragraph("<b>Panel 2:<br/>Doubt Submission</b>", styles['td_bold']),
-            Paragraph("Rohan considers asking in the 65-student WhatsApp group, but knows it will be buried under 100 jokes and event flyers.", styles['td']),
-            Paragraph("As Rohan begins typing his question, the Smart Doubt Engine instantly alerts him: <i>'Similar doubt found from Priya Sharma in your section!'</i>", styles['td'])
+            Paragraph("The student considers asking in a large unstructured chat group, but knows it will be quickly buried under unrelated messages.", styles['td']),
+            Paragraph("As the student begins typing their question, the Smart Doubt Engine instantly alerts them: <i>'Similar doubt found from a classmate in your course!'</i>", styles['td'])
         ],
         [
             Paragraph("<b>Panel 3:<br/>Deduplication (+1)</b>", styles['td_bold']),
-            Paragraph("Rohan considers walking to Block 38 tomorrow morning, dreading the 40-minute corridor wait and possible locked cabin doors.", styles['td']),
-            Paragraph("Rohan reads Priya's existing doubt. It matches his exact confusion. He clicks <b>'+1 - I Have the Same Doubt'</b>. Supporter count jumps to 4.", styles['td'])
+            Paragraph("The student considers walking across campus to faculty cabins tomorrow, dreading the 40-minute wait and possible locked cabin doors.", styles['td']),
+            Paragraph("The student reads the classmate's existing doubt. It matches their exact confusion. They click <b>'+1 - I Have the Same Doubt'</b>. Supporter count increments.", styles['td'])
         ],
         [
             Paragraph("<b>Panel 4:<br/>Faculty Queue</b>", styles['td_bold']),
-            Paragraph("Dr. Harpreet Kaur wakes up to 18 individual WhatsApp messages asking about paging formulas, feeling exhausted before her morning lecture.", styles['td']),
-            Paragraph("Dr. Kaur opens her Faculty Console. A single high-priority card appears showing: <i>'4 Students Support This Doubt (Section K22GF)'</i>.", styles['td'])
+            Paragraph("A faculty member wakes up to dozens of individual messages asking the same formula question, feeling overwhelmed before morning lectures.", styles['td']),
+            Paragraph("The faculty member opens the Faculty Console. A single consolidated card appears showing: <i>'Multiple Students Support This Doubt'</i>.", styles['td'])
         ],
         [
             Paragraph("<b>Panel 5:<br/>1-Click Resolution</b>", styles['td_bold']),
-            Paragraph("Dr. Kaur tries to copy-paste replies on WhatsApp, spending 45 minutes typing on her phone.", styles['td']),
-            Paragraph("Dr. Kaur reviews the syllabus context, clicks <b>'Give Ans by AI'</b> to generate a draft with textbook citations, reviews it, and publishes. One answer clears 4 students at once.", styles['td'])
+            Paragraph("The faculty member attempts to type individual replies, spending 45 minutes on repetitive manual messaging.", styles['td']),
+            Paragraph("The faculty member reviews the context, clicks <b>'Give Ans by AI'</b> to synthesize a syllabus-grounded explanation, verifies it, and publishes. One authoritative answer resolves all supporters at once.", styles['td'])
         ],
         [
             Paragraph("<b>Panel 6:<br/>Office Hour Booking</b>", styles['td_bold']),
-            Paragraph("Rohan still has an edge-case question. He wanders Block 38 corridors looking for her nameplate.", styles['td']),
-            Paragraph("Rohan opens the <b>'Faculty Availability'</b> tab, sees Dr. Kaur's open Thursday 2:00 PM slot in Cabin 402, and books a 10-minute consultation with 1 click.", styles['td'])
+            Paragraph("The student still has an in-depth conceptual question requiring face-to-face guidance. They wander departmental corridors searching for availability.", styles['td']),
+            Paragraph("The student opens the <b>'Faculty Availability'</b> tab, views verified consultation hours, and books a dedicated 10-minute slot with 1 click.", styles['td'])
         ]
     ]
 
@@ -156,21 +157,29 @@ def build_cp5_pdf(output_path):
     story.append(PageBreak())
 
     # 4. Live Figma System & Component Architecture
-    story.append(Paragraph("4. Live Figma Project Architecture & Design System", styles['h1']))
+    story.append(Paragraph("4. Production UI Screen System & Figma Component Architecture", styles['h1']))
     story.append(Paragraph(
-        "A complete, editable Figma design project was constructed to mirror the exact UI components, spatial grid, typography, and color tokens of the deployed application. This ensures strict continuity between design thinking specifications and the production build.",
+        "A complete, production-parity UI design system was constructed to mirror the exact components, spatial grid, typography, and color tokens of the deployed application. Below are the visual Figma screen mockups showcasing the key interactive states of the system.",
         styles['body']
     ))
 
+    # Embed Visual Figma Mockups
+    figma_mockups_img = os.path.join(ASSETS_DIR, 'figma_screen_mockups_combined.png')
+    if os.path.exists(figma_mockups_img):
+        story.append(Image(figma_mockups_img, width=540, height=415))
+        story.append(Spacer(1, 6))
+        story.append(Paragraph("<b>Figure 5.2:</b> Production Figma Screen System — Frame 01: Student Doubt Modal, Frame 02: Duplicate Alert with '+1', Frame 03: Teacher Console Queue, and Frame 04: Official Answer Drawer.", styles['callout']))
+
+    story.append(Spacer(1, 10))
+
     figma_meta_html = """
-    <b>Official Project Design System Tokens:</b><br/>
+    <b>Official Project Design System Tokens & Deploy Parity:</b><br/>
     • <b>Primary Navigation Green:</b> <code>#15370D</code> (Navbar, primary action buttons, active tabs)<br/>
     • <b>Background Cream:</b> <code>#FCF9EA</code> (Card surface backgrounds, modal backdrops)<br/>
     • <b>Orange Accent:</b> <code>#F2842F</code> (Notification counters, duplicate warning badges, +1 highlights)<br/>
-    • <b>Primary Text:</b> <code>#000000</code> / <code>#1E293B</code> (High contrast headings, crisp typography)<br/>
+    • <b>Primary Text:</b> <code>#000000</code> (High contrast headings, crisp black typography)<br/>
     • <b>Typography Hierarchy:</b> Inter & Outfit (Web Font family, 12pt body, 16pt cards, 24pt headers)<br/>
-    • <b>Public Figma Workspace URL:</b> <font color='#15370D'><b>https://www.figma.com/design/faculty-connect-int335-p09</b></font><br/>
-    • <b>Live Application Reference:</b> <font color='#F2842F'><b>https://faculty-connect-production.up.railway.app/</b></font>
+    • <b>Live Application Reference:</b> <font color='#15370D'><b>https://faculty-connect-production.up.railway.app/</b></font>
     """
     story.append(make_callout_box([Paragraph(figma_meta_html, styles['body'])], border_color=PRIMARY_GREEN, bg_color=BG_CREAM))
     story.append(Spacer(1, 10))
@@ -184,7 +193,7 @@ def build_cp5_pdf(output_path):
         [Paragraph("F03", styles['td_bold']), Paragraph("Ask a Doubt Modal Flow", styles['td']), Paragraph("Student Portal", styles['td']), Paragraph("Dynamic Course -> Unit -> Topic drilldown and date picker.", styles['td'])],
         [Paragraph("F04", styles['td_bold']), Paragraph("Semantic Duplicate Warning", styles['td']), Paragraph("Student Portal", styles['td']), Paragraph("Classmate question comparison, '+1 I Have the Same Doubt' button.", styles['td'])],
         [Paragraph("F05", styles['td_bold']), Paragraph("Doubt Detail & Answer View", styles['td']), Paragraph("Student Portal", styles['td']), Paragraph("Official faculty badge, 3-hour AI preliminary notice, textbook citations.", styles['td'])],
-        [Paragraph("F06", styles['td_bold']), Paragraph("Faculty Availability Calendar", styles['td']), Paragraph("Student Portal", styles['td']), Paragraph("Cabin block/room badges, bookable time slots, consultation reason input.", styles['td'])],
+        [Paragraph("F06", styles['td_bold']), Paragraph("Faculty Availability Calendar", styles['td']), Paragraph("Student Portal", styles['td']), Paragraph("Cabin block badges, bookable time slots, consultation reason input.", styles['td'])],
         [Paragraph("F07", styles['td_bold']), Paragraph("Faculty Console Dashboard", styles['td']), Paragraph("Teacher Portal", styles['td']), Paragraph("Urgent pending queue, '+1' impact counters, 3-hour SLA clock.", styles['td'])],
         [Paragraph("F08", styles['td_bold']), Paragraph("Faculty Answer Drawer", styles['td']), Paragraph("Teacher Portal", styles['td']), Paragraph("1-click 'Give Ans by AI', manual answer Markdown editor, instant resolution.", styles['td'])],
         [Paragraph("F09", styles['td_bold']), Paragraph("Appointments Management", styles['td']), Paragraph("Teacher Portal", styles['td']), Paragraph("Accept/Decline student cabin slot requests, add preparation notes.", styles['td'])],
@@ -214,7 +223,7 @@ def build_cp5_pdf(output_path):
     test_plan_html = """
     <b>Usability Testing Protocol & Constraints:</b><br/>
     • <b>Testing Objective:</b> Evaluate task completion speed, cognitive friction points, and user comprehension of duplicate detection and cabin appointment features.<br/>
-    • <b>Participant Cohort:</b> 5 Users in Round 1 (4 Undergraduate Students across K22DF, K22GF, K22SE + 1 Faculty Member Dr. Rajesh Sharma).<br/>
+    • <b>Participant Cohort:</b> 5 Users in Round 1 (4 Students + 1 Faculty Member).<br/>
     • <b>Observation Methodology:</b> Think-Aloud Protocol. Observers remain silent and record hesitations, erroneous clicks, and verbal comments.<br/>
     • <b>Success Threshold:</b> 80% unassisted task completion across all core flows without team intervention.
     """
@@ -239,13 +248,13 @@ def build_cp5_pdf(output_path):
         ],
         [
             Paragraph("<b>Task 3</b>", styles['td_bold']),
-            Paragraph("You need a 10-minute in-person meeting with Dr. Rajesh Sharma to show your wireframe sketches. Book a consultation.", styles['td']),
-            Paragraph("Navigates to Faculty Availability, locates Dr. Sharma (Block 34-601), picks upcoming slot, inputs reason.", styles['td']),
+            Paragraph("You need a 10-minute in-person meeting with your course faculty to show your wireframe sketches. Book a consultation.", styles['td']),
+            Paragraph("Navigates to Faculty Availability, locates course faculty member, picks upcoming slot, inputs reason.", styles['td']),
             Paragraph("Successfully receives 'Appointment Requested' confirmation.", styles['td'])
         ],
         [
             Paragraph("<b>Task 4 (Faculty)</b>", styles['td_bold']),
-            Paragraph("You are Dr. Rajesh Sharma. Open your dashboard and resolve a pending student doubt using the most efficient method available.", styles['td']),
+            Paragraph("You are the course faculty member. Open your dashboard and resolve a pending student doubt using the most efficient method available.", styles['td']),
             Paragraph("Logs in as faculty, opens pending doubt, uses 'Give Ans by AI' or types answer, clicks publish.", styles['td']),
             Paragraph("Doubt moves to Resolved state in under 60 seconds.", styles['td'])
         ]

@@ -276,16 +276,16 @@ def build_cp4_pdf(output_path):
     # 7. Production UI/UX & Figma Architectural Parity Specifications
     story.append(Paragraph("7. Production UI/UX Architecture & Figma System Specifications", styles['h1']))
     story.append(Paragraph(
-        "To ensure seamless fidelity between design thinking ideation and the production codebase, Team P09 established strict component parity matching the live deployed application across all structural dimensions.",
+        "To ensure seamless fidelity between design thinking ideation and the production codebase, Team P09 established strict component parity matching the live deployed application across all structural dimensions. The visual mockup below showcases the core Figma frames created for the platform.",
         styles['body']
     ))
 
-    # Embed Figma Design System Image
-    figma_img = os.path.join(ASSETS_DIR, 'figma_design_system_preview.png')
-    if os.path.exists(figma_img):
-        story.append(Image(figma_img, width=540, height=315))
+    # Embed Combined Figma Mockups Image
+    figma_mockups_img = os.path.join(ASSETS_DIR, 'figma_screen_mockups_combined.png')
+    if os.path.exists(figma_mockups_img):
+        story.append(Image(figma_mockups_img, width=540, height=415))
         story.append(Spacer(1, 6))
-        story.append(Paragraph("<b>Figure 4.2:</b> Comprehensive Figma Design System Architecture & Component Inventory matching the production application.", styles['callout']))
+        story.append(Paragraph("<b>Figure 4.2:</b> Production Figma Screen System — Frame 01: Student Doubt Modal, Frame 02: Duplicate Alert with '+1', Frame 03: Teacher Console Queue, and Frame 04: Official Answer Drawer.", styles['callout']))
 
     story.append(Spacer(1, 10))
 
@@ -342,7 +342,16 @@ def build_cp4_pdf(output_path):
         ('BOTTOMPADDING', (0,0), (-1,-1), 5),
     ]))
     story.append(t_fspecs)
-    story.append(Spacer(1, 14))
+    story.append(Spacer(1, 10))
+
+    # Embed Figma Design System Tokens
+    figma_img = os.path.join(ASSETS_DIR, 'figma_design_system_preview.png')
+    if os.path.exists(figma_img):
+        story.append(PageBreak())
+        story.append(Paragraph("Design Tokens & Architectural Hierarchy", styles['h2']))
+        story.append(Image(figma_img, width=540, height=315))
+        story.append(Spacer(1, 6))
+        story.append(Paragraph("<b>Figure 4.2B:</b> Design Tokens & Component Hierarchy showing color palette, typography scales, and modular atomic structure.", styles['callout']))
 
     # Page Break for Step-by-Step User Flow
     story.append(PageBreak())
@@ -350,16 +359,17 @@ def build_cp4_pdf(output_path):
     # 8. Step-by-Step Formal User Flow Diagram
     story.append(Paragraph("8. Formal Step-by-Step User Flow Architecture", styles['h1']))
     story.append(Paragraph(
-        "Below is the complete, numbered step-by-step user flow diagram mapping the operational sequence of the selected concept, detailing decision diamonds, duplicate resolution branches, and the 3-hour SLA safety net.",
+        "Below is the complete user flow diagram mapping the operational sequence of the selected concept, replicating the GitHub flowchart architecture with 4 integrated modules: Student Academic Journey, 3-Hour SLA Safety Net, Faculty Resolution Options, and Cabin Consultation Booking.",
         styles['body']
     ))
+    story.append(Spacer(1, 6))
 
-    # Embed User Flow Diagram
-    uf_img = os.path.join(ASSETS_DIR, 'user_flow_step_by_step_academic.png')
+    # Embed GitHub Mermaid User Flow Diagram
+    uf_img = os.path.join(ASSETS_DIR, 'github_mermaid_user_flow.png')
     if os.path.exists(uf_img):
-        story.append(Image(uf_img, width=540, height=350))
+        story.append(Image(uf_img, width=480, height=655))
         story.append(Spacer(1, 6))
-        story.append(Paragraph("<b>Figure 4.3:</b> Formal Step-by-Step User Flow Architecture illustrating Student Inquiry, Semantic Deduplication, SLA Fallback, and Faculty Direct Resolution.", styles['callout']))
+        story.append(Paragraph("<b>Figure 4.3:</b> End-to-End User Flow Architecture showing Student Submission, Semantic Deduplication, 3-Hour AI Fallback Engine, and Faculty Multi-Method Resolution.", styles['callout']))
 
     doc.build(story, canvasmaker=NumberedCanvas)
     print(f"CP4 PDF built successfully: {output_path}")

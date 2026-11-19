@@ -47,35 +47,35 @@ def build_cp6_pdf(output_path):
     ))
 
     test_logs = [
-        ("Participant P1 (Student: Aman C.)", "2nd Year B.Tech CSE (Section K22DF) • Tested: Laptop Chrome Web",
+        ("Participant P1", "Role: Student • Tested: Laptop Chrome Web",
          "Task 1: Ask doubt on CPU Scheduling Round Robin quantum.",
-         "Opened modal, picked CSE316, typed question. When duplicate prompt appeared, read classmate's question and clicked '+1'.",
-         "Was momentarily unsure if he needed to click 'Submit' again after clicking '+1'. Wondered if an email confirmation would be sent.",
+         "Opened modal, picked course, typed question. When duplicate prompt appeared, read classmate's question and clicked '+1'.",
+         "Was momentarily unsure if he needed to click 'Submit' again after clicking '+1'. Wondered if a confirmation would be displayed.",
          "Completed (Success with hesitation).",
          "\"I really liked seeing that someone in my class already asked this. But after clicking +1, I wasn't 100% sure if the teacher was notified or if I was supposed to do something else.\""),
 
-        ("Participant P2 (Student: Priya S.)", "2nd Year B.Tech CSE (Section K22DF) • Tested: Mobile Viewport",
+        ("Participant P2", "Role: Student • Tested: Mobile Viewport",
          "Task 2 & 3: Check existing doubt and book cabin appointment.",
-         "Navigated to Faculty Availability to book Dr. Rajesh Sharma. Selected a slot and submitted reason.",
+         "Navigated to Faculty Availability to book consultation. Selected a slot and submitted reason.",
          "Encountered confusion because the button showed 'Appointment Requested' but the calendar card didn't immediately turn green until a page refresh.",
          "Completed (Minor UI friction).",
-         "\"Booking is super fast, but please make it clear whether my slot is confirmed immediately or if sir has to approve it first.\""),
+         "\"Booking is super fast, but please make it clear whether my slot is confirmed immediately or if faculty has to approve it first.\""),
 
-        ("Participant P3 (Student: Rohan P.)", "2nd Year B.Tech CSE (Section K22GF) • Tested: Laptop Chrome Web",
+        ("Participant P3", "Role: Student • Tested: Laptop Chrome Web",
          "Task 1: Check 3-Hour AI response on Java Inheritance.",
          "Inspected an AI-answered question in 'My Questions'. Read the response and citations.",
-         "Expressed concern that early AI answers were a bit repetitive and generic. Wanted deeply technical explanations matching LPU syllabus depth.",
+         "Expressed concern that early AI answers were a bit repetitive and generic. Wanted deeply technical explanations matching university syllabus depth.",
          "Completed (Success with content feedback).",
          "\"The AI answer is decent, but it sounded like a generic dictionary definition. I need real code snippets and references to our prescribed textbook.\""),
 
-        ("Participant P4 (Student: Sneha R.)", "2nd Year B.Tech CSE (Section K22SE) • Tested: Android Chrome Mobile",
+        ("Participant P4", "Role: Student • Tested: Mobile Browser",
          "Task 1 & 2: Mobile responsive navigation and doubt submission.",
          "Browsed doubt feed on smartphone screen. Tried tapping the small '+1' badge.",
          "Accidentally clicked the card border instead of the '+1' button because touch target was slightly small on mobile.",
          "Completed after retry.",
          "\"On my phone, the button was a bit tiny for my thumb. Make the +1 button bigger with a nice clear tap area.\""),
 
-        ("Participant P5 (Faculty: Dr. Rajesh Sharma)", "Associate Professor & INT335 Lead • Tested: Cabin 34-601 Desktop",
+        ("Participant P5", "Role: Faculty • Tested: Desktop Browser",
          "Task 4: Resolve pending student doubt in teacher console.",
          "Logged in, opened pending doubt drawer, clicked 'Publish Official Answer'.",
          "<b>Critical UI Bug Observed:</b> The drawer modal remained stuck open after clicking publish, and doubt status stayed 'Pending' until a manual browser refresh.",
@@ -195,14 +195,14 @@ def build_cp6_pdf(output_path):
     ))
 
     retest_logs = [
-        ("Retest Participant P6 (Student: Aditya K.)", "2nd Year B.Tech CSE (Section K22DF) • Verified: Auto-Resolve & Modal Closure",
-         "Tested the updated Teacher Console and Student Doubt Feed. Submitted doubt and observed faculty resolution flow.",
+        ("Retest Participant P6", "Role: Student • Verified: Auto-Resolve & Modal Closure",
+         "Tested the updated Teacher Console and Student Doubt Feed. Observed faculty resolution flow.",
          "Observed Result: Teacher clicked 'Give Ans by AI'; drawer immediately auto-closed; doubt status instantly turned green 'Resolved' with zero reload required.",
          "<b>Verification:</b> 100% Resolved. Previous Serious Issue A completely eliminated. Task completed in 18 seconds without confusion."),
 
-        ("Retest Participant P7 (Student: Neha M.)", "2nd Year B.Tech CSE (Section K22GF) • Verified: AI Depth & Mobile Touch Targets",
-         "Tested upgraded academic synthesizer on Android phone and checked '+1' button ergonomics.",
-         "Observed Result: Tapped '+1' button easily with thumb; inspected AI answer on Java Diamond Problem. Expressed high satisfaction with vtable explanation and code snippet.",
+        ("Retest Participant P7", "Role: Student • Verified: AI Depth & Mobile Touch Targets",
+         "Tested upgraded academic synthesizer on smartphone and checked '+1' button ergonomics.",
+         "Observed Result: Tapped '+1' button easily with thumb; inspected AI answer on course problem. Expressed high satisfaction with explanation depth and code snippet.",
          "<b>Verification:</b> 100% Resolved. Content depth validated; mobile touch accuracy measured at 100% on first attempt.")
     ]
 
