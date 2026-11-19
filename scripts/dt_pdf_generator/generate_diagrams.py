@@ -617,10 +617,465 @@ def generate_all_diagrams():
         "journey_map_faculty.png"
     )
 
+def create_step_by_step_user_flow(filename):
+    """
+    Renders a clean academic, step-by-step user flow diagram in black and white
+    matching the GitHub flowchart with numbered stages, decision diamonds, and paths.
+    """
+    w, h = 920, 600
+    img = Image.new('RGB', (w, h), C_WHITE)
+    draw = ImageDraw.Draw(img)
+
+    # Frame border
+    draw.rectangle([10, 10, w - 10, h - 10], outline=C_BLACK, width=2)
+
+    # Header Bar
+    draw.rectangle([10, 10, w - 10, 50], fill=(245, 245, 245), outline=C_BLACK, width=1)
+    draw.text((25, 16), "FACULTY CONNECT: END-TO-END STEP-BY-STEP USER FLOW", fill=C_BLACK, font=get_font(16, bold=True))
+    draw.text((w - 280, 20), "FORMAL ACADEMIC ARCHITECTURE", fill=C_BLACK, font=get_font(10, bold=True))
+
+    # SECTION 1: STUDENT FLOW (y: 60 to 220)
+    draw.rectangle([20, 60, w - 20, 230], fill=(255, 255, 255), outline=C_BLACK, width=1)
+    draw.rectangle([20, 60, w - 20, 85], fill=(240, 240, 240), outline=C_BLACK, width=1)
+    draw.text((30, 66), "STAGE 1: STUDENT ACADEMIC INQUIRY & DEDUPLICATION FLOW", fill=C_BLACK, font=get_font(11, bold=True))
+
+    # Boxes for Student Flow
+    # Box 1: Login
+    draw.rectangle([35, 100, 165, 155], fill=(255, 255, 255), outline=C_BLACK, width=2)
+    draw.text((45, 108), "Step 1: Auth", fill=C_BLACK, font=get_font(10, bold=True))
+    draw.text((45, 124), "Student Login via", fill=C_BLACK, font=get_font(8.5))
+    draw.text((45, 136), "LPU Registration ID", fill=C_BLACK, font=get_font(8.5))
+
+    # Arrow 1->2
+    draw.line([(165, 127), (195, 127)], fill=C_BLACK, width=2)
+    draw.polygon([(195, 127), (188, 123), (188, 131)], fill=C_BLACK)
+
+    # Box 2: Scope
+    draw.rectangle([195, 100, 335, 155], fill=(255, 255, 255), outline=C_BLACK, width=2)
+    draw.text((205, 108), "Step 2: Scoping", fill=C_BLACK, font=get_font(10, bold=True))
+    draw.text((205, 124), "Selects Course, Unit,", fill=C_BLACK, font=get_font(8.5))
+    draw.text((205, 136), "Topic & Lecture Date", fill=C_BLACK, font=get_font(8.5))
+
+    # Arrow 2->3
+    draw.line([(335, 127), (365, 127)], fill=C_BLACK, width=2)
+    draw.polygon([(365, 127), (358, 123), (358, 131)], fill=C_BLACK)
+
+    # Box 3: Query
+    draw.rectangle([365, 100, 495, 155], fill=(255, 255, 255), outline=C_BLACK, width=2)
+    draw.text((375, 108), "Step 3: Input", fill=C_BLACK, font=get_font(10, bold=True))
+    draw.text((375, 124), "Types Academic Doubt", fill=C_BLACK, font=get_font(8.5))
+    draw.text((375, 136), "Text & Math Formulas", fill=C_BLACK, font=get_font(8.5))
+
+    # Arrow 3->Diamond
+    draw.line([(495, 127), (530, 127)], fill=C_BLACK, width=2)
+    draw.polygon([(530, 127), (523, 123), (523, 131)], fill=C_BLACK)
+
+    # Decision Diamond (center 585, 127; radius 55, 32)
+    cx, cy, rx, ry = 585, 127, 55, 32
+    draw.polygon([(cx, cy - ry), (cx + rx, cy), (cx, cy + ry), (cx - rx, cy)], fill=(245, 245, 245), outline=C_BLACK)
+    draw.text((cx - 42, cy - 14), "Semantic Check", fill=C_BLACK, font=get_font(8.5, bold=True))
+    draw.text((cx - 44, cy + 2), "(Similarity >= 60%)", fill=C_BLACK, font=get_font(8))
+
+    # Branch A: YES (Match found) -> Upward to 5A
+    draw.line([(cx, cy - ry), (cx, cy - ry - 20), (690, cy - ry - 20)], fill=C_BLACK, width=2)
+    draw.polygon([(690, cy - ry - 20), (683, cy - ry - 24), (683, cy - ry - 16)], fill=C_BLACK)
+    draw.text((cx + 5, cy - ry - 15), "YES (Duplicate)", fill=C_BLACK, font=get_font(8, bold=True))
+
+    draw.rectangle([690, 70, 890, 120], fill=(255, 255, 255), outline=C_BLACK, width=2)
+    draw.text((700, 76), "Step 4A: Duplicate Modal", fill=C_BLACK, font=get_font(9.5, bold=True))
+    draw.text((700, 92), "Inspects classmate's doubt.", fill=C_BLACK, font=get_font(8))
+    draw.text((700, 104), "Clicks '+1 - I Have Same Doubt'", fill=C_BLACK, font=get_font(8, bold=True))
+
+    # Branch B: NO (Unique query) -> Straight to 5B
+    draw.line([(cx + rx, cy), (690, cy)], fill=C_BLACK, width=2)
+    draw.polygon([(690, cy), (683, cy - 4), (683, cy + 4)], fill=C_BLACK)
+    draw.text((cx + rx + 5, cy - 12), "NO (Unique)", fill=C_BLACK, font=get_font(8, bold=True))
+
+    draw.rectangle([690, 140, 890, 195], fill=(255, 255, 255), outline=C_BLACK, width=2)
+    draw.text((700, 146), "Step 4B: Enters Queue", fill=C_BLACK, font=get_font(9.5, bold=True))
+    draw.text((700, 162), "Query published directly to", fill=C_BLACK, font=get_font(8))
+    draw.text((700, 174), "Teacher's Section Queue", fill=C_BLACK, font=get_font(8, bold=True))
+
+    # SECTION 2: 3-HOUR SLA AI SAFETY NET (y: 240 to 350)
+    draw.rectangle([20, 240, w - 20, 360], fill=(255, 255, 255), outline=C_BLACK, width=1)
+    draw.rectangle([20, 240, w - 20, 265], fill=(240, 240, 240), outline=C_BLACK, width=1)
+    draw.text((30, 246), "STAGE 2: ASYNCHRONOUS 3-HOUR SLA TIMER & AI FALLBACK ENGINE", fill=C_BLACK, font=get_font(11, bold=True))
+
+    # Steps for SLA
+    draw.rectangle([35, 280, 260, 340], fill=(255, 255, 255), outline=C_BLACK, width=2)
+    draw.text((45, 288), "Daemon Background Timer", fill=C_BLACK, font=get_font(10, bold=True))
+    draw.text((45, 306), "Monitors all pending doubts.", fill=C_BLACK, font=get_font(8.5))
+    draw.text((45, 320), "Tracks 3-hour SLA window.", fill=C_BLACK, font=get_font(8.5))
+
+    draw.line([(260, 310), (330, 310)], fill=C_BLACK, width=2)
+    draw.polygon([(330, 310), (323, 306), (323, 314)], fill=C_BLACK)
+
+    # SLA Diamond (center 400, 310)
+    cx, cy, rx, ry = 400, 310, 70, 32
+    draw.polygon([(cx, cy - ry), (cx + rx, cy), (cx, cy + ry), (cx - rx, cy)], fill=(245, 245, 245), outline=C_BLACK)
+    draw.text((cx - 56, cy - 12), "Faculty Resolved", fill=C_BLACK, font=get_font(8.5, bold=True))
+    draw.text((cx - 60, cy + 4), "Within 3 Hours?", fill=C_BLACK, font=get_font(8.5, bold=True))
+
+    # SLA YES -> Goes to Faculty Workflow
+    draw.line([(cx, cy + ry), (cx, 380)], fill=C_BLACK, width=2)
+    draw.polygon([(cx, 380), (cx - 4, 373), (cx + 4, 373)], fill=C_BLACK)
+    draw.text((cx + 6, cy + ry + 10), "YES: Normal Review", fill=C_BLACK, font=get_font(8, bold=True))
+
+    # SLA NO -> Triggers AI
+    draw.line([(cx + rx, cy), (570, cy)], fill=C_BLACK, width=2)
+    draw.polygon([(570, cy), (563, cy - 4), (563, cy + 4)], fill=C_BLACK)
+    draw.text((cx + rx + 10, cy - 12), "NO (Overdue)", fill=C_BLACK, font=get_font(8, bold=True))
+
+    draw.rectangle([570, 280, 890, 340], fill=(255, 255, 255), outline=C_BLACK, width=2)
+    draw.text((580, 288), "Automated Academic AI Synthesizer", fill=C_BLACK, font=get_font(10, bold=True))
+    draw.text((580, 306), "Generates syllabus-grounded explanation with code & textbook references.", fill=C_BLACK, font=get_font(8.5))
+    draw.text((580, 320), "Status marked 'AI Answered' • Student unblocked • Remains in queue for teacher.", fill=C_BLACK, font=get_font(8.5, bold=True))
+
+    # SECTION 3: FACULTY RESOLUTION & APPOINTMENTS (y: 370 to 585)
+    draw.rectangle([20, 370, w - 20, 585], fill=(255, 255, 255), outline=C_BLACK, width=1)
+    draw.rectangle([20, 370, w - 20, 395], fill=(240, 240, 240), outline=C_BLACK, width=1)
+    draw.text((30, 376), "STAGE 3: FACULTY CONSOLE RESOLUTION & CABIN CONSULTATION BOOKING", fill=C_BLACK, font=get_font(11, bold=True))
+
+    # Steps for Faculty
+    draw.rectangle([35, 410, 220, 475], fill=(255, 255, 255), outline=C_BLACK, width=2)
+    draw.text((45, 418), "Faculty Review Queue", fill=C_BLACK, font=get_font(10, bold=True))
+    draw.text((45, 436), "Views urgent pending doubts.", fill=C_BLACK, font=get_font(8.5))
+    draw.text((45, 452), "Cards show '+1' impact count.", fill=C_BLACK, font=get_font(8.5))
+
+    draw.line([(220, 442), (260, 442)], fill=C_BLACK, width=2)
+    draw.polygon([(260, 442), (253, 438), (253, 446)], fill=C_BLACK)
+
+    # Resolution Choice Box
+    draw.rectangle([260, 410, 480, 475], fill=(255, 255, 255), outline=C_BLACK, width=2)
+    draw.text((270, 418), "Choose Resolution Mode", fill=C_BLACK, font=get_font(10, bold=True))
+    draw.text((270, 436), "Mode A: 1-Click 'Give Ans by AI'", fill=C_BLACK, font=get_font(8.5, bold=True))
+    draw.text((270, 452), "Mode B: Draft Official Solution", fill=C_BLACK, font=get_font(8.5, bold=True))
+
+    draw.line([(480, 442), (520, 442)], fill=C_BLACK, width=2)
+    draw.polygon([(520, 442), (513, 438), (513, 446)], fill=C_BLACK)
+
+    # Direct Resolve Box
+    draw.rectangle([520, 410, 710, 475], fill=(255, 255, 255), outline=C_BLACK, width=2)
+    draw.text((530, 418), "Instant 'Resolved' State", fill=C_BLACK, font=get_font(10, bold=True))
+    draw.text((530, 436), "Status updates directly.", fill=C_BLACK, font=get_font(8.5))
+    draw.text((530, 452), "Drawer auto-closes.", fill=C_BLACK, font=get_font(8.5, bold=True))
+
+    draw.line([(710, 442), (745, 442)], fill=C_BLACK, width=2)
+    draw.polygon([(745, 442), (738, 438), (738, 446)], fill=C_BLACK)
+
+    # Broadcast Box
+    draw.rectangle([745, 410, 890, 475], fill=(255, 255, 255), outline=C_BLACK, width=2)
+    draw.text((755, 418), "Instant Notification", fill=C_BLACK, font=get_font(10, bold=True))
+    draw.text((755, 436), "Pushed to author & all", fill=C_BLACK, font=get_font(8.5))
+    draw.text((755, 452), "'+1' supporters at once.", fill=C_BLACK, font=get_font(8.5, bold=True))
+
+    # Row 2 in Section 3: Office Hours Booking
+    draw.rectangle([35, 495, 890, 565], fill=(255, 255, 255), outline=C_BLACK, width=1)
+    draw.text((45, 502), "PARALLEL WORKFLOW: CABIN CONSULTATION APPOINTMENT LEDGER", fill=C_BLACK, font=get_font(9.5, bold=True))
+    draw.text((45, 520), "1. Student checks real-time cabin consultation slots -> 2. Selects date/time & submits reason ->", fill=C_BLACK, font=get_font(8.5))
+    draw.text((45, 536), "3. Faculty reviews in Appointments tab -> 4. Accepts with preparation notes -> 5. Both parties confirmed without corridor wait.", fill=C_BLACK, font=get_font(8.5))
+
+    out_path = os.path.join(ASSETS_DIR, filename)
+    img.save(out_path, quality=95)
+    return out_path
+
+
+def create_figma_system_architecture(filename):
+    """
+    Renders detailed Figma-like UI screen architecture matching live application
+    (Layout, Navigation, Typography, Colors, Spacing, Buttons, Forms, Cards, Tables, Icons).
+    """
+    w, h = 920, 560
+    img = Image.new('RGB', (w, h), C_WHITE)
+    draw = ImageDraw.Draw(img)
+
+    # Outer border
+    draw.rectangle([10, 10, w - 10, h - 10], outline=C_BLACK, width=2)
+
+    # Header Bar
+    draw.rectangle([10, 10, w - 10, 50], fill=(245, 245, 245), outline=C_BLACK, width=1)
+    draw.text((25, 16), "FIGMA UI/UX DESIGN SYSTEM SPECIFICATIONS (P09 — FACULTY CONNECT)", fill=C_BLACK, font=get_font(16, bold=True))
+    draw.text((w - 280, 20), "LIVE APP CODE-CONNECT PARITY", fill=C_BLACK, font=get_font(10, bold=True))
+
+    # 4 Design System Columns
+    col_w = (w - 40) // 4
+    cols = [
+        ("1. BRAND TOKENS", [
+            ("Primary Nav Green", "#15370D"),
+            ("Background Cream", "#FCF9EA"),
+            ("Orange Accent", "#F2842F"),
+            ("Primary Text", "#000000"),
+            ("Border Line", "#CBD5E1"),
+            ("Typography", "Inter / Outfit"),
+            ("Grid System", "8px Spatial Baseline"),
+            ("Border Radius", "8px Cards / 6px Inputs")
+        ]),
+        ("2. CORE COMPONENTS", [
+            ("Navbar Header", "Global Dark Green Bar"),
+            ("Role Switcher", "Student / Faculty toggle"),
+            ("Doubt Card", "Course, Topic, Author, +1"),
+            ("Duplicate Modal", "Classmate doubt preview"),
+            ("Answer Drawer", "Markdown & Math support"),
+            ("Availability Card", "Cabin slot reservation"),
+            ("Analytics Table", "Section-wise confusion"),
+            ("Permanent Footer", "Team registration info")
+        ]),
+        ("3. INTERACTION PATTERNS", [
+            ("Semantic Typing", "Auto-checks 60% similarity"),
+            ("'+1' Action", "Single-click support link"),
+            ("1-Click AI Answer", "Synthesizes syllabus draft"),
+            ("Publish Action", "Sets doubt to 'Resolved'"),
+            ("Auto-Drawer Close", "setSelectedDoubt(null)"),
+            ("Status Badges", "Pending / AI / Resolved"),
+            ("Conflict Check", "Prevents double-booking"),
+            ("CSV Export", "Downloads empirical report")
+        ]),
+        ("4. PRODUCTION FRAMES", [
+            ("F01: Welcome Entry", "Role picker & credentials"),
+            ("F02: Student Home", "Subject cards & notifications"),
+            ("F03: Ask a Doubt", "Dynamic unit/topic cascade"),
+            ("F04: Deduplication", "+1 Same Doubt modal"),
+            ("F05: Answer View", "Verified textbook solution"),
+            ("F06: Cabin Booking", "Time slot reservation"),
+            ("F07: Teacher Console", "Urgent cards with 1-click AI"),
+            ("F08: Confusion Stats", "Course confusion heatmaps")
+        ])
+    ]
+
+    for i, (col_title, items) in enumerate(cols):
+        cx0 = 20 + i * col_w
+        cx1 = cx0 + col_w - 6
+        draw.rectangle([cx0, 60, cx1, h - 20], fill=(255, 255, 255), outline=C_BLACK, width=1)
+        draw.rectangle([cx0, 60, cx1, 95], fill=(240, 240, 240), outline=C_BLACK, width=1)
+        draw.text((cx0 + 10, 72), col_title, fill=C_BLACK, font=get_font(11, bold=True))
+
+        cy = 110
+        for label, val in items:
+            draw.text((cx0 + 10, cy), "• " + label + ":", fill=C_BLACK, font=get_font(9.5, bold=True))
+            draw.text((cx0 + 20, cy + 14), val[:32], fill=(60, 60, 60), font=get_font(8.5))
+            cy += 36
+
+    out_path = os.path.join(ASSETS_DIR, filename)
+    img.save(out_path, quality=95)
+    return out_path
+
+
+def generate_all_diagrams():
+    """Generates all diagram image assets needed across checkpoints."""
+    print("Generating Empathy Map: Student...")
+    create_empathy_map(
+        "Student Empathy Map",
+        "Target: Undergraduate Engineering Students (LPU)",
+        {
+            'says': [
+                '"Sir, are you free for 5 minutes?"',
+                '"Did anyone ask about question 3 on WhatsApp?"',
+                '"I waited outside his cabin for 40 minutes."',
+                '"I was too embarrassed to knock on the door."'
+            ],
+            'thinks': [
+                '"Will the professor think my doubt is stupid?"',
+                '"What if he is busy grading or in a meeting?"',
+                '"I really need this clarified before tomorrow\'s CA."',
+                '"WhatsApp is completely flooded with irrelevant spam."'
+            ],
+            'does': [
+                'Wanders Block 34/38 corridors searching cabins',
+                'Repeatedly checks WhatsApp class groups',
+                'Asks classmates before approaching faculty',
+                'Gives up and resorts to unreliable YouTube tutorials'
+            ],
+            'feels': [
+                'High anxiety before exams and continuous evaluations',
+                'Hesitation and intimidation knocking on cabin doors',
+                'Frustration over wasted walking and waiting transit',
+                'Overwhelmed by scattered, unorganized communications'
+            ]
+        },
+        "empathy_map_student.png"
+    )
+
+    print("Generating Empathy Map: Faculty...")
+    create_empathy_map(
+        "Faculty Empathy Map",
+        "Target: Engineering Faculty & Course Coordinators (LPU)",
+        {
+            'says': [
+                '"Please do not message me on WhatsApp after 8 PM."',
+                '"I already explained this exact concept in Unit II."',
+                '"Come during my free consultation hour on Thursday."',
+                '"Email me your question with proper subject code."'
+            ],
+            'thinks': [
+                '"I wish students checked if someone else asked this."',
+                '"I have 3 lecture preps, research papers, and lab grading."',
+                '"My personal phone number has become a 24/7 helpdesk."',
+                '"I want to help sincere students, but I am exhausted."'
+            ],
+            'does': [
+                'Answers identical questions repeatedly across sections',
+                'Locks cabin door during research or continuous grading',
+                'Receives unscheduled cabin knocks mid-thought',
+                'Feels guilty when student doubts remain unaddressed'
+            ],
+            'feels': [
+                'Overwhelmed by fragmented communication channels',
+                'Fatigued by repetitive low-level syllabus queries',
+                'Anxious about boundary invasion on personal messaging',
+                'Frustrated by lack of structured consultation slots'
+            ]
+        },
+        "empathy_map_faculty.png"
+    )
+
+    print("Generating Personas...")
+    create_persona_card(
+        "Rohan Patel",
+        "2nd Year B.Tech CSE (Section K22GF) • Age: 20 • Commuter Student",
+        "I just want clear, textbook-grounded answers without wasting an hour in cabin corridors.",
+        [
+            ("Section", "K22GF"),
+            ("Attendance", "88%"),
+            ("Tech Comfort", "High (Mobile/Web)"),
+            ("Major Focus", "Data Structures & Java")
+        ],
+        [
+            "Get fast, authoritative clarification on lecture doubts ahead of CAs.",
+            "Know exactly when professors are physically free in cabins.",
+            "Avoid asking redundant questions already answered for classmates."
+        ],
+        [
+            "Cabin hunting between Block 34 and 38 only to find locked doors.",
+            "WhatsApp groups buried under hundreds of unrelated messages.",
+            "Intimidation when asking questions in front of 60 peers in lecture hall."
+        ],
+        "persona_student_rohan.png"
+    )
+
+    create_persona_card(
+        "Dr. Rajesh Sharma",
+        "Associate Professor & INT335 Course Lead • Cabin: Block 34-601",
+        "I love teaching, but answering the same doubt 30 times on WhatsApp drains my research energy.",
+        [
+            ("Teaching Load", "3 Courses (180+ Students)"),
+            ("Cabin", "Block 34, Cabin 601"),
+            ("Experience", "12 Years Academic"),
+            ("Key Focus", "Design Thinking & Algorithms")
+        ],
+        [
+            "Protect deep-work hours for research, curriculum development, and grading.",
+            "Answer student academic queries efficiently without redundant repetition.",
+            "Maintain organized, scheduled face-to-face consultation hours in cabin."
+        ],
+        [
+            "Receiving 20-30 identical questions about SCAMPER before assignment deadlines.",
+            "Unscheduled door knocks during confidential evaluation grading.",
+            "Blurry boundaries between personal WhatsApp life and academic consultations."
+        ],
+        "persona_faculty_dr_sharma.png"
+    )
+
+    print("Generating Journey Maps...")
+    create_journey_map(
+        "Current Student Experience: Journey Map",
+        [
+            {
+                'name': 'Doubt Emerges',
+                'actions': 'Studies lecture notes at hostel; gets stuck on concept.',
+                'thoughts': 'This wasn\'t clear in lecture today.',
+                'pain_point': 'No immediate way to verify textbook accuracy.',
+                'valence': 0,
+                'valence_label': 'Confused'
+            },
+            {
+                'name': 'Search for Info',
+                'actions': 'Checks WhatsApp group; asks roommates.',
+                'thoughts': 'Group has 200 unread memes and spam.',
+                'pain_point': 'Scattered, unsearchable chat messages.',
+                'valence': -1,
+                'valence_label': 'Frustrated'
+            },
+            {
+                'name': 'Cabin Transit',
+                'actions': 'Walks from Block 28 to Block 34 in 35°C heat.',
+                'thoughts': 'Hope sir is in his cabin today.',
+                'pain_point': 'Zero visibility of professor\'s physical schedule.',
+                'valence': -1,
+                'valence_label': 'Anxious'
+            },
+            {
+                'name': 'Corridor Wait',
+                'actions': 'Finds cabin closed; waits on staircase 30 mins.',
+                'thoughts': 'Did he go for lunch or a departmental meeting?',
+                'pain_point': 'Wasted time; missed next lecture preparation.',
+                'valence': -2,
+                'valence_label': 'Defeated'
+            },
+            {
+                'name': 'Resolution / Loss',
+                'actions': 'Gives up; turns to random YouTube video or skips.',
+                'thoughts': 'I guess I\'ll just wing this in the CA.',
+                'pain_point': 'Academic concept remains fundamentally unmastered.',
+                'valence': -2,
+                'valence_label': 'Hopeless'
+            }
+        ],
+        "journey_map_student.png"
+    )
+
+    create_journey_map(
+        "Current Faculty Experience: Journey Map",
+        [
+            {
+                'name': 'Lecture Delivery',
+                'actions': 'Delivers 50-minute lecture to 65 students in hall.',
+                'thoughts': 'Covered syllabus, but some students seemed hesitant.',
+                'pain_point': 'Limited time for 1-on-1 questions during lecture.',
+                'valence': 1,
+                'valence_label': 'Engaged'
+            },
+            {
+                'name': 'Cabin Return',
+                'actions': 'Returns to cabin to grade mid-term evaluation papers.',
+                'thoughts': 'Need 2 uninterrupted hours for university grading.',
+                'pain_point': 'Knocks at door begin within 10 minutes.',
+                'valence': 0,
+                'valence_label': 'Guarded'
+            },
+            {
+                'name': 'Unscheduled Knocks',
+                'actions': 'Answers door; 3 students ask same question consecutively.',
+                'thoughts': 'I literally just answered this 5 minutes ago.',
+                'pain_point': 'Extreme cognitive fragmentation and frustration.',
+                'valence': -1,
+                'valence_label': 'Interrupted'
+            },
+            {
+                'name': 'WhatsApp Flood',
+                'actions': 'Opens phone at 9 PM; 45 unread doubt messages.',
+                'thoughts': 'My personal evening is completely gone.',
+                'pain_point': 'No boundary between work and personal life.',
+                'valence': -2,
+                'valence_label': 'Overwhelmed'
+            },
+            {
+                'name': 'Backlog Fatigue',
+                'actions': 'Types copy-paste replies; leaves half unread.',
+                'thoughts': 'I feel guilty, but this system is unsustainable.',
+                'pain_point': 'Faculty burnout; delayed support for sincere doubts.',
+                'valence': -1,
+                'valence_label': 'Burnout'
+            }
+        ],
+        "journey_map_faculty.png"
+    )
+
     print("Generating Ideation & System Graphics...")
     create_ideation_graphic("ideation_methods_crazy8s.png")
     create_user_flow_graphic("user_flow_student_faculty.png")
     create_testing_before_after("before_after_testing_fixes.png")
+    create_step_by_step_user_flow("user_flow_step_by_step_academic.png")
+    create_figma_system_architecture("figma_design_system_preview.png")
 
     print("All diagram assets successfully created in:", ASSETS_DIR)
 

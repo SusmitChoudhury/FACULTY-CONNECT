@@ -5,19 +5,19 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.platypus import Paragraph, Spacer, Table, TableStyle, PageBreak, KeepTogether, Image, HRFlowable
 from reportlab.pdfgen import canvas
 
-# Official Palette
+# Official Academic Submission Palette (Clean, High-Contrast Black Typography)
 PRIMARY_GREEN = HexColor('#15370D')
 ACCENT_ORANGE = HexColor('#F2842F')
-BG_CREAM = HexColor('#FCF9EA')
-DARK_TEXT = HexColor('#000000')
-SLATE_TEXT = HexColor('#1E293B')
-MUTED_TEXT = HexColor('#475569')
-BORDER_COLOR = HexColor('#CBD5E1')
-LIGHT_GREEN_BG = HexColor('#EBF5EB')
-LIGHT_ORANGE_BG = HexColor('#FFF5ED')
-CARD_BG = HexColor('#F8FAFC')
-SUCCESS_GREEN = HexColor('#166534')
-WARNING_ORANGE = HexColor('#C2410C')
+BG_CREAM = HexColor('#FFFFFF') # Clean academic paper background
+DARK_TEXT = HexColor('#000000') # Pure black font
+SLATE_TEXT = HexColor('#000000') # Pure black font for body
+MUTED_TEXT = HexColor('#333333') # Dark charcoal for subtitles
+BORDER_COLOR = HexColor('#000000') # Crisp black borders
+LIGHT_GREEN_BG = HexColor('#F4F6F4') # Subtle light academic tint
+LIGHT_ORANGE_BG = HexColor('#FAF6F2') # Subtle light academic tint
+CARD_BG = HexColor('#FFFFFF') # Clean white card surface
+SUCCESS_GREEN = HexColor('#15370D')
+WARNING_ORANGE = HexColor('#000000')
 
 class NumberedCanvas(canvas.Canvas):
     """
@@ -86,9 +86,9 @@ def get_dt_styles():
         'DocTitle',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=24,
-        leading=28,
-        textColor=PRIMARY_GREEN,
+        fontSize=22,
+        leading=26,
+        textColor=HexColor('#000000'),
         spaceAfter=6
     )
 
@@ -96,9 +96,9 @@ def get_dt_styles():
         'DocSubtitle',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=12,
-        leading=16,
-        textColor=ACCENT_ORANGE,
+        fontSize=11,
+        leading=15,
+        textColor=HexColor('#000000'),
         spaceAfter=14
     )
 
@@ -106,9 +106,9 @@ def get_dt_styles():
         'H1',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=16,
-        leading=20,
-        textColor=PRIMARY_GREEN,
+        fontSize=14,
+        leading=18,
+        textColor=HexColor('#000000'),
         spaceBefore=12,
         spaceAfter=8,
         keepWithNext=True
@@ -118,9 +118,9 @@ def get_dt_styles():
         'H2',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=12,
-        leading=16,
-        textColor=DARK_TEXT,
+        fontSize=11,
+        leading=15,
+        textColor=HexColor('#000000'),
         spaceBefore=10,
         spaceAfter=6,
         keepWithNext=True
@@ -130,9 +130,9 @@ def get_dt_styles():
         'H3',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=10,
-        leading=14,
-        textColor=PRIMARY_GREEN,
+        fontSize=9.5,
+        leading=13,
+        textColor=HexColor('#000000'),
         spaceBefore=6,
         spaceAfter=4,
         keepWithNext=True
@@ -144,7 +144,7 @@ def get_dt_styles():
         fontName='Helvetica',
         fontSize=9,
         leading=13,
-        textColor=SLATE_TEXT,
+        textColor=HexColor('#000000'),
         spaceAfter=6
     )
 
@@ -167,7 +167,7 @@ def get_dt_styles():
         parent=body_style,
         fontSize=8.5,
         leading=12,
-        textColor=PRIMARY_GREEN
+        textColor=HexColor('#000000')
     )
 
     table_header_style = ParagraphStyle(
@@ -186,14 +186,14 @@ def get_dt_styles():
         fontName='Helvetica',
         fontSize=8,
         leading=11,
-        textColor=SLATE_TEXT
+        textColor=HexColor('#000000')
     )
 
     table_cell_bold = ParagraphStyle(
         'TableCellBold',
         parent=table_cell_style,
         fontName='Helvetica-Bold',
-        textColor=DARK_TEXT
+        textColor=HexColor('#000000')
     )
 
     badge_style = ParagraphStyle(
@@ -202,7 +202,7 @@ def get_dt_styles():
         fontName='Helvetica-Bold',
         fontSize=8,
         leading=10,
-        textColor=PRIMARY_GREEN,
+        textColor=HexColor('#000000'),
         alignment=1
     )
 

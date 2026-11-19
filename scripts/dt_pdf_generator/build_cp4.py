@@ -268,6 +268,99 @@ def build_cp4_pdf(output_path):
         story.append(Paragraph(f"• <b>{title}</b> {reason}", styles['bullet']))
         story.append(Spacer(1, 4))
 
+    story.append(Spacer(1, 10))
+
+    # Page Break for Figma System Architecture
+    story.append(PageBreak())
+
+    # 7. Production UI/UX & Figma Architectural Parity Specifications
+    story.append(Paragraph("7. Production UI/UX Architecture & Figma System Specifications", styles['h1']))
+    story.append(Paragraph(
+        "To ensure seamless fidelity between design thinking ideation and the production codebase, Team P09 established strict component parity matching the live deployed application across all structural dimensions.",
+        styles['body']
+    ))
+
+    # Embed Figma Design System Image
+    figma_img = os.path.join(ASSETS_DIR, 'figma_design_system_preview.png')
+    if os.path.exists(figma_img):
+        story.append(Image(figma_img, width=540, height=315))
+        story.append(Spacer(1, 6))
+        story.append(Paragraph("<b>Figure 4.2:</b> Comprehensive Figma Design System Architecture & Component Inventory matching the production application.", styles['callout']))
+
+    story.append(Spacer(1, 10))
+
+    figma_specs_data = [
+        [Paragraph("<b>UI/UX Design Dimension</b>", styles['th']), Paragraph("<b>Figma Design Specification & Component Architecture</b>", styles['th'])],
+        [
+            Paragraph("<b>Layout Architecture</b>", styles['td_bold']),
+            Paragraph("Desktop SaaS dashboard layout with sticky top navigation header, 240px contextual left sidebar, multi-column card grid, and full-width modal drawers. Fully responsive mobile-first PWA viewport.", styles['td'])
+        ],
+        [
+            Paragraph("<b>Global Navigation</b>", styles['td_bold']),
+            Paragraph("Persistent header navbar in Dark Green (<code>#15370D</code>) featuring Faculty Connect branding, Project P09 badge, 1-click Student/Faculty role switcher, notification badge, and native Chrome PWA 'Install App' trigger.", styles['td'])
+        ],
+        [
+            Paragraph("<b>Typography Hierarchy</b>", styles['td_bold']),
+            Paragraph("Clean Inter font family. Title: 22px/26px Bold; H1 Section: 14px/18px Bold; Card Headers: 12px/16px Bold; Body Typography: 9px/13px in crisp, high-contrast black (<code>#000000</code>).", styles['td'])
+        ],
+        [
+            Paragraph("<b>Colour Tokens</b>", styles['td_bold']),
+            Paragraph("Strict official palette: Primary Green (<code>#15370D</code>), Surface Cream (<code>#FCF9EA</code>), Accent Orange (<code>#F2842F</code>), High-Contrast Text (<code>#000000</code>), and Neutral Border (<code>#CBD5E1</code>). Zero unauthorized neons or gradients.", styles['td'])
+        ],
+        [
+            Paragraph("<b>Spacing System</b>", styles['td_bold']),
+            Paragraph("Strict 8px spatial baseline grid. Card padding: 16px (p-4) to 24px (p-6); Gap spacing: 12px to 16px; Modal margins: 24px; Touch targets: minimum 44px height for mobile accessibility.", styles['td'])
+        ],
+        [
+            Paragraph("<b>Buttons & States</b>", styles['td_bold']),
+            Paragraph("Primary Action Button (Dark Green solid with white text), Secondary Action (Cream background with green border), Accent '+1' Support Button (Orange badge with active state), Ghost Cancel (text only), and Disabled states.", styles['td'])
+        ],
+        [
+            Paragraph("<b>Forms & Inputs</b>", styles['td_bold']),
+            Paragraph("Dynamic 3-tier cascading dropdowns (Subject -> Unit -> Topic), calendar date pickers, auto-expanding question textarea with character counters, search input with clear icon.", styles['td'])
+        ],
+        [
+            Paragraph("<b>Cards & Surfaces</b>", styles['td_bold']),
+            Paragraph("Doubt Summary Cards with urgency badges, Course Progress Cards, Consultation Slot Badges, and Teacher Queue Cards with supporter count indicators.", styles['td'])
+        ],
+        [
+            Paragraph("<b>Dashboard Structure</b>", styles['td_bold']),
+            Paragraph("Student Portal: Overview, Ask a Doubt, My Questions, Faculty Availability, Cabin Consultation Bookings.<br/>Teacher Portal: Urgent Doubt Queue, Resolved Doubts, Consultation Management, Section-Wise Analytics.", styles['td'])
+        ],
+        [
+            Paragraph("<b>Interaction Patterns</b>", styles['td_bold']),
+            Paragraph("Instant semantic typing similarity check; 1-click 'Give Ans by AI' draft generation; direct status update to 'Resolved'; automatic modal drawer closing (<code>setSelectedDoubt(null)</code>); real-time supporter counter increments.", styles['td'])
+        ]
+    ]
+
+    t_fspecs = Table(figma_specs_data, colWidths=[140, 400])
+    t_fspecs.setStyle(TableStyle([
+        ('BACKGROUND', (0,0), (-1,0), PRIMARY_GREEN),
+        ('BOX', (0,0), (-1,-1), 1, BORDER_COLOR),
+        ('INNERGRID', (0,0), (-1,-1), 0.5, BORDER_COLOR),
+        ('TOPPADDING', (0,0), (-1,-1), 5),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 5),
+    ]))
+    story.append(t_fspecs)
+    story.append(Spacer(1, 14))
+
+    # Page Break for Step-by-Step User Flow
+    story.append(PageBreak())
+
+    # 8. Step-by-Step Formal User Flow Diagram
+    story.append(Paragraph("8. Formal Step-by-Step User Flow Architecture", styles['h1']))
+    story.append(Paragraph(
+        "Below is the complete, numbered step-by-step user flow diagram mapping the operational sequence of the selected concept, detailing decision diamonds, duplicate resolution branches, and the 3-hour SLA safety net.",
+        styles['body']
+    ))
+
+    # Embed User Flow Diagram
+    uf_img = os.path.join(ASSETS_DIR, 'user_flow_step_by_step_academic.png')
+    if os.path.exists(uf_img):
+        story.append(Image(uf_img, width=540, height=350))
+        story.append(Spacer(1, 6))
+        story.append(Paragraph("<b>Figure 4.3:</b> Formal Step-by-Step User Flow Architecture illustrating Student Inquiry, Semantic Deduplication, SLA Fallback, and Faculty Direct Resolution.", styles['callout']))
+
     doc.build(story, canvasmaker=NumberedCanvas)
     print(f"CP4 PDF built successfully: {output_path}")
 

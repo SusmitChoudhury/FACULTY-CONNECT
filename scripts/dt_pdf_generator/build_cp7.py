@@ -118,9 +118,9 @@ def build_cp7_pdf(output_path):
     ))
 
     # System Architecture Graphic
-    flow_img = os.path.join(ASSETS_DIR, 'user_flow_student_faculty.png')
+    flow_img = os.path.join(ASSETS_DIR, 'user_flow_step_by_step_academic.png')
     if os.path.exists(flow_img):
-        story.append(Image(flow_img, width=540, height=270))
+        story.append(Image(flow_img, width=540, height=350))
         story.append(Spacer(1, 6))
         story.append(Paragraph("<b>Figure 7.1:</b> Faculty Connect Dual-Track System Architecture & Resolution Workflow.", styles['callout']))
 

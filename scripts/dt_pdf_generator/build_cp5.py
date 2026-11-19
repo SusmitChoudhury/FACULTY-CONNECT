@@ -85,9 +85,9 @@ def build_cp5_pdf(output_path):
     ))
 
     # User Flow Image
-    flow_img = os.path.join(ASSETS_DIR, 'user_flow_student_faculty.png')
+    flow_img = os.path.join(ASSETS_DIR, 'user_flow_step_by_step_academic.png')
     if os.path.exists(flow_img):
-        story.append(Image(flow_img, width=540, height=288))
+        story.append(Image(flow_img, width=540, height=350))
         story.append(Spacer(1, 6))
         story.append(Paragraph("<b>Figure 5.1:</b> Dual-track User Flow showing student doubt submission with duplicate detection and faculty 1-click resolution.", styles['callout']))
 
